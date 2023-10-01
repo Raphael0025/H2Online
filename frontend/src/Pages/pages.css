@@ -1,0 +1,9 @@
+main{
+    background-color: var(--bright-blue);
+    
+}
+#dash{
+    padding: 0;
+    padding-top: 50px;
+    padding-left: 175px;
+}
