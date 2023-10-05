@@ -28,7 +28,7 @@ const Navigation = () => {
         return () => clearInterval(intervalId);
     }, []);
     const formattedDate = format(currentDateTime, 'MMM. dd, yyyy, E');
-    const formattedTime = format(currentDateTime, 'HH:mm a');
+    const formattedTime = format(currentDateTime, 'hh:mm a');
 
     const handleActiveItem = (item) => {
         setItem(item)

@@ -1,8 +1,10 @@
 import React, {useState, useEffect} from 'react'
-import bg from '../Assets/images/authUser.png'
-import blob from '../Assets/images/blobBg.png'
+import bg from 'Assets/images/authUser.png'
+import blob from 'Assets/images/blobBg.png'
+import { useNavigate  } from 'react-router-dom';
 
 const UserAuth = () => {
+    const navigate = useNavigate();
     const [formData, setFormData] = useState({
         name: '',
         password: '',
@@ -31,6 +33,7 @@ const UserAuth = () => {
     
     const handleSubmit = () => {
         alert(formData.name === 'rapi' && formData.password === 'pepi')
+        navigate('/h2online/dashboard');
     }
     return (
         <main className='h-100 d-flex justify-content-center align-items-center blob' style={{backgroundImage: `url(${blob})`, backgroundColor: '#C3E9FF'}}>

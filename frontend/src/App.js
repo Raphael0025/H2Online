@@ -1,13 +1,17 @@
-import { UserAuth } from './Auth'
-import { Dashboard } from './Pages'
-import { Navigation } from './Components'
+import {UserAuth} from 'Auth'
+import { PageLink } from 'Views';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
 function App() {
   return (
-    <div className="App w-auto">
-      <UserAuth />
-      {/* <Navigation />
-      <Dashboard  /> */}
-    </div>
+    <BrowserRouter>
+      <div className="App w-auto">
+        <Routes>
+          <Route path='/' element={<UserAuth />} />
+          <Route path='/h2online/*' element={<PageLink />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
 

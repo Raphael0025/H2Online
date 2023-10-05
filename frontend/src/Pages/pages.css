@@ -1,9 +1,27 @@
 main{
     background-color: var(--bright-blue);
-    
 }
 #dash{
     padding: 0;
     padding-top: 50px;
     padding-left: 175px;
+}
+.overview-container{
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+}
+.statistic-container{
+    grid-template-columns: 1fr 2fr;
+    grid-column-gap: 20px;
+}
+.statistic{
+    background-color: var(--white);
+}
+.header{
+    color: var(--dark-blue);
+    font-family: var(--font-family3);
+    font-stretch: condensed;
+    font-weight: 600;
+    font-size: 14px;
 }
