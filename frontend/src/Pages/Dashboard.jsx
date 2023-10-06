@@ -1,5 +1,5 @@
 import React from 'react'
-import { OverviewComponent, DoughnutChart, LineChart, Table } from 'Components'
+import { OverviewComponent, DoughnutChart, LineChart, AccordionTable } from 'Components'
 
 const Dashboard = () => {
     const sampleData = [
@@ -160,7 +160,8 @@ const Dashboard = () => {
             age: 28,
             city: 'Los Angeles',
           },
-      ];
+    ]
+    const headers = ['Invoice ID', 'Date', 'Customer', 'Items', 'Total', 'Service', 'Payment', 'Vendor', 'Delivery']
     return (
         <main id='dash' className='container-fluid '>
             <section className='container-fluid px-3 py-3 d-grid overview-container'>
@@ -181,7 +182,7 @@ const Dashboard = () => {
             <section className='px-3 py-3 w-100'>
                 <div className='statistic rounded-3 p-3'>
                     <h4 className='header'>Recent Invoices</h4>
-                    <Table data={users} />
+                    <AccordionTable data={users} headers={headers} />
                 </div>
             </section>
         </main>
