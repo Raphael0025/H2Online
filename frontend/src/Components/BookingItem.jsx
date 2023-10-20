@@ -12,6 +12,10 @@ const BookingItem = ({data}) => {
                 <span className='text-truncate flex-fill '>{data.customer_id}</span>
             </div>
             <div className='d-flex flex-column  align-items-start '>
+                <span className='booking-label flex-fill'>Customer ID:</span>
+                <span className='text-truncate flex-fill '>{data.customer_id}</span>
+            </div>
+            <div className='d-flex flex-column  align-items-start '>
                 <span className='booking-label flex-fill'>Address:</span>
                 <span className='text-truncate flex-fill '>{data.address}</span>
             </div>

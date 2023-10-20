@@ -140,7 +140,7 @@
   overflow-y: scroll;
 }
 .booking-item{
-  height: 200px;
+  height: 220px;
   background-color: var(--bright-blue);
   border: 1px solid var(--dark-blue);
 }
