@@ -1,10 +1,11 @@
 main{
     background-color: var(--bright-blue);
 }
-#dash, #customer, #meter, #pos, #sales, #order, #logistic, #booking, #inventory, #customerprofile{
+#dash, #customer, #meter, #point-of-sales, #sales, #order, #logistic, #booking, #inventory, #customerprofile{
     padding: 0;
     padding-top: 50px;
     padding-left: 175px;
+    background-color: var(--bright-blue);
 }
 .overview-container{
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -34,4 +35,10 @@ main{
 }
 .ord-summary{
     width: calc(100% - 450px);
+}
+.layout{
+    height: calc(100% - 30px);
+}
+.layout-two{
+    overflow: hidden;
 }

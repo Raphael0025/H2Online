@@ -1,27 +1,40 @@
-import React, {useState} from 'react'
+import React from 'react'
+import { IconPark } from 'Assets/SvgIcons' 
 
-const Receipt = ({data, headers, height='420px'}) => {
-    const [selectedRow, setSelectedRow] = useState(null);
+const Receipt = ({data, headers, height='420px', onUpdateQuantity, onDeleteItem}) => {
     
     return (
-        <div role="table" className='w-100'>
+        <div role="table" className='w-100 py-2'>
             <TableHeader headers={headers} />
-            <TableBody dataContents={data} height={height} selectedRow={selectedRow} onRowClick={setSelectedRow} />
+            <TableBody dataContents={data} height={height} onUpdateQuantity={onUpdateQuantity} onDeleteItem={onDeleteItem} />
         </div>
     )
 }
 
-const TableBody = ({dataContents, height, selectedRow, onRowClick }) => {
+const TableBody = ({dataContents, height, onUpdateQuantity, onDeleteItem}) => {
 
     return(
-        <div className='d-flex flex-column w-100 gap-2 table-container-two' role='rowgroup' style={{height: height}}>
-        {dataContents.map((data) => (
-            <div role='row' key={data.id} className={`table-row d-flex text-center py-2 rounded-3  ${selectedRow === data ? 'selected' : ''}`} onClick={() => onRowClick(data)}>
-            {Object.values(data).map((value, index) => (
-                <span className='w-100 text-truncate' role='cell' key={index}>
-                    {value}
+        <div className='d-flex flex-column w-100 gap-1 table-container-two border' role='rowgroup' style={{height: height}}>
+        {dataContents.map((data, indx) => (
+            <div role='row' key={indx} className={`d-flex text-center py-1 rounded-2  `} >
+                <button className='btn p-0 px-2' onClick={() => onDeleteItem(indx)}><IconPark path={'ant-design:delete-twotone'} color={'#005EC3'}  /></button>
+                <span className='w-100 text-truncate d-flex align-items-end justify-content-center' role='cell' style={{fontSize: '11px'}}>
+                    {data.item}
                 </span>
-            ))}
+                <span className='w-100 text-truncate d-flex align-items-end justify-content-center' role='cell' style={{fontSize: '11px'}}>
+                    {data.service}
+                </span>
+                <span className='w-100 text-truncate d-flex align-items-end justify-content-center' role='cell' style={{fontSize: '11px'}}>
+                    <button className='btn py-0 px-2 fw-bold' onClick={() => onUpdateQuantity(indx, data.qty - 1)}>-</button>
+                    <span className='px-1'>{data.qty}</span>
+                    <button className='btn py-0 px-2 fw-bold' onClick={() => onUpdateQuantity(indx, data.qty + 1)}>+</button>
+                </span>
+                <span className='w-100 text-truncate d-flex align-items-end justify-content-center' role='cell' style={{fontSize: '11px'}}>
+                    P {data.unit_price}
+                </span>
+                <span className='w-100 text-truncate d-flex align-items-end justify-content-center' role='cell' style={{fontSize: '11px'}}>
+                    P {data.sub_price}
+                </span>
             </div>
         ))}
         </div>
@@ -31,7 +44,7 @@ const TableBody = ({dataContents, height, selectedRow, onRowClick }) => {
 const TableHeader = ({headers}) => {
     return (
         <div role='rowgroup'>
-            <div role='row' className='d-flex gap-2 header-txt mb-3'>
+            <div role='row' className='d-flex gap-2 rounded-2 receipt-header py-1 ps-4 header-txt mb-1'>
             {headers.map((header, indx) => (
                 <span key={indx} role='cell' className='w-100 text-center'>{header}</span>
             ))}
