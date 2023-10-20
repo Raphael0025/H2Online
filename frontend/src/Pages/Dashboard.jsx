@@ -5,45 +5,38 @@ const Dashboard = () => {
     const sampleData = [
         {
             header: 'Revenue',
-            data: 'P 4,020',
             icon: 'ri:bar-chart-grouped-line'
         },
         {
             header: 'Profit',
-            data: 'P 3,200',
             icon: 'tdesign:money'
         },
         {
             header: 'Total Customers',
-            data: 500,
             icon: 'bi:people-fill'
         },
         {
             header: 'Expenses',
-            data: 'P 100',
             icon: 'vaadin:money-withdraw'
         },
         {
             header: 'Un Paid Customers',
-            data: 13,
             icon: 'fluent:people-error-20-filled'
         },
         {
             header: 'Daily Total Orders',
-            data: 50,
             icon: 'solar:checklist-bold'
         },
         {
             header: 'For Pickup',
-            data: 50,
             icon: 'game-icons:water-gallon'
         },
         {
             header: 'Booking',
-            data: 4,
             icon: 'quill:checkmark-double'
         }
     ]
+    const contents = [ 'P 4,020', 'P 3,200', 500, 'P 100', 50, 50, 13, 4]
 
     const data = [25, 30, 15, 50]
 
@@ -161,12 +154,13 @@ const Dashboard = () => {
             city: 'Los Angeles',
           },
     ]
+    
     const headers = ['Invoice ID', 'Date', 'Customer', 'Items', 'Total', 'Service', 'Payment', 'Vendor', 'Delivery']
     return (
         <main id='dash' className='container-fluid '>
             <section className='container-fluid px-3 py-3 d-grid overview-container'>
             {sampleData.map((data, indx) => (
-                <OverviewComponent content={data} key={indx}/>
+                <OverviewComponent heading={data} content={contents[indx]} key={indx}/>
             ))}
             </section>
             <section className='px-3 py-3 d-grid statistic-container'>

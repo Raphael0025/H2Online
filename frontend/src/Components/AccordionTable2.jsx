@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 
-const AccordionTable = ({data, headers, rowColor="un-select", height="300px"}) => {
+const AccordionTable2 = ({data, headers, rowColor="un-select", height="300px"}) => {
     
     return (
         <div role="table" className='accordion' id='tableAccordion'>
@@ -58,4 +58,4 @@ const TableHeader = ({headers}) => {
         </div>
     )
 }
-export default AccordionTable
+export default AccordionTable2

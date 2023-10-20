@@ -9,6 +9,7 @@ import { BiSolidMessage } from 'react-icons/bi'
 import { MDIcon, IconPark, InventoryIcon } from '../Assets/SvgIcons'
 import { mdiPrinterPos, mdiPrinterPosOutline, mdiTruckDeliveryOutline, mdiTruckDelivery } from '@mdi/js';
 import { format } from 'date-fns';
+import { Link } from 'react-router-dom'
 
 const Navigation = () => {
     const [currentDateTime, setCurrentDateTime] = useState(new Date());
@@ -40,49 +41,49 @@ const Navigation = () => {
                 <img src={logo} width={'40%'} alt='logo' />
                 <ul className='list-unstyled d-flex flex-column gap-1'>
                     <li className='list-itm px-2 py-2 rounded-2' onClick={() => handleActiveItem('dashboard')}>
-                        <a  className='gap-2 text-decoration-none d-flex align-items-center fw-medium'>
+                        <Link to='dashboard' className='gap-2 text-decoration-none d-flex align-items-center fw-medium'>
                             <IconPark path={dash} size={30} /> Dashboard
-                        </a>
+                        </Link>
                     </li>
                     <li className='list-itm px-2 py-2 rounded-2' onClick={() => handleActiveItem('customer')}>
-                        <a  className='gap-2 text-decoration-none d-flex align-items-center fw-medium'>
+                        <Link to='customer-management' className='gap-2 text-decoration-none d-flex align-items-center fw-medium'>
                             {item === 'customer' ? <BsPeopleFill size={30} /> : <BsPeople size={30} />} Customers
-                        </a>
+                        </Link>
                     </li>
                     <li className='list-itm px-2 py-2 rounded-2' onClick={() => handleActiveItem('pos')}>
-                        <a  className='gap-2 text-decoration-none d-flex align-items-center fw-medium'>
+                        <Link to='point-of-sales'  className='gap-2 text-decoration-none d-flex align-items-center fw-medium'>
                             <MDIcon icon={printer} size={'32px'} color='#003E81' /> Point of Sales
-                        </a>
+                        </Link>
                     </li>
                     <li className='list-itm px-2 py-2 rounded-2' onClick={() => handleActiveItem('order')}>
-                        <a  className='gap-2 text-decoration-none d-flex align-items-center fw-medium'>
+                        <Link to='order-mgmt' className='gap-2 text-decoration-none d-flex align-items-center fw-medium'>
                             {item === 'order' ? <IoCart size={30} /> : <IoCartOutline size={30} />} Orders
-                        </a>
+                        </Link>
                     </li>
                     <li className='list-itm px-2 py-2 rounded-2' onClick={() => handleActiveItem('sale')}>
-                        <a  className='gap-2 text-decoration-none d-flex align-items-center fw-medium'>
+                        <Link to='sales-mgmt' className='gap-2 text-decoration-none d-flex align-items-center fw-medium'>
                             {item === 'sale' ? <PiCoinsFill size={30} /> : <PiCoins size={30} />} Sales
-                        </a>
+                        </Link>
                     </li>
                     <li className='list-itm px-2 py-2 rounded-2' onClick={() => handleActiveItem('logistic')}>
-                        <a  className='gap-2 text-decoration-none d-flex align-items-center fw-medium'>
+                        <Link to='logistic' className='gap-2 text-decoration-none d-flex align-items-center fw-medium'>
                             <MDIcon icon={truck} size={'32px'} color='#003E81'/> Logistics
-                        </a>
+                        </Link>
                     </li>
                     <li className='list-itm px-2 py-2 rounded-2' onClick={() => handleActiveItem('pickup')}>
-                        <a  className='gap-2 text-decoration-none d-flex align-items-center fw-medium'>
+                        <Link to='booking' className='gap-2 text-decoration-none d-flex align-items-center fw-medium'>
                             <IconPark path={delivery} size={30} /> Pick-up
-                        </a>
+                        </Link>
                     </li>
                     <li className='list-itm px-2 py-2 rounded-2' onClick={() => handleActiveItem('inventory')}>
-                        <a  className='gap-2 text-decoration-none d-flex align-items-center fw-medium'>
+                        <Link to='inventory' className='gap-2 text-decoration-none d-flex align-items-center fw-medium'>
                             <InventoryIcon color={'#003E81'} filled={item === 'inventory'} size={30} /> Inventory
-                        </a>
+                        </Link>
                     </li>
                     <li className='list-itm px-2 py-2 rounded-2' onClick={() => handleActiveItem('meter')}>
-                        <a  className='gap-2 text-decoration-none d-flex align-items-center fw-medium'>
+                        <Link to='meter-reading' className='gap-2 text-decoration-none d-flex align-items-center fw-medium'>
                             {item === 'meter' ? <BsSpeedometer size={30} /> : <BsSpeedometer2 size={30} />} Meter Reading
-                        </a>
+                        </Link>
                     </li>
                 </ul>
             </aside>

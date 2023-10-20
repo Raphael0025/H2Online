@@ -2,7 +2,9 @@ import React from 'react'
 
 const CustomerProfile = () => {
     return (
-        <main>CustomerProfile</main>
+        <main id='customerprofile' className='container-fluid'>
+            customer profile
+        </main>
     )
 }
 
