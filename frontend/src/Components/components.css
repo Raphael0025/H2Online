@@ -174,9 +174,6 @@
   background-color: var(--cyan);
   color: var(--white);
 }
-.itm-value{
-  color: var(--cyan);
-}
 .pos-itm{
   width: 150px;
   font-size: 13px;
@@ -184,7 +181,7 @@
 }
   .pos-itm:hover{
     cursor: pointer;
-    background-color: var(--light-cyan)
+    background-color: var(--light-cyan);
   }
 .list{
   overflow-y: scroll;
@@ -193,6 +190,9 @@
 .not-selectable {
   opacity: 0.5; /* Reduces opacity for un-selectable items */
   pointer-events: none; /* Disables click events on un-selectable items */
+}
+.selectable{
+  color: var(--cyan);
 }
 .select{
   background-color: var(--dark-blue);
