@@ -42,3 +42,21 @@ main{
 .layout-two{
     overflow: hidden;
 }
+.customer-dropdown {
+    position: absolute;
+    z-index: 1;
+    background: white;
+    border: 1px solid #ccc;
+    max-height: 100px; /* Adjust the maximum height as needed */
+    overflow-y: auto;
+    width: 200px;
+}
+
+.customer-dropdown .dropdown-item {
+    padding: 5px;
+    cursor: pointer;
+}
+
+.customer-dropdown .dropdown-item:hover {
+    background: #f1f1f1;
+}

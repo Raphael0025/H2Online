@@ -24,7 +24,7 @@ const TableBody = ({dataContents, height, rowColor}) => {
                 <h4 className={`accordion-header rounded-3 ${selected === data.id ? 'selected' : rowColor }`} >
                     <button className='btn w-100 d-flex gap-2 collapsed' onClick={() => toggleSelected(data.id)} type='button' data-bs-toggle='collapse' data-bs-target={`#collapse${data.id}`} aria-expanded='false' aria-controls={`collapse${data.id}`}>
                     {Object.values(data).map((value, index) => (
-                        <span className='w-100 text-truncate' role='cell' key={index}>
+                        <span className='w-100 text-truncate' style={{fontSize: '12px'}} role='cell' key={index}>
                             {value}
                         </span>
                     ))}

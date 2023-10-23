@@ -2,7 +2,6 @@ import React from 'react'
 import { IconPark } from 'Assets/SvgIcons' 
 
 const Receipt = ({data, headers, height='420px', onUpdateQuantity, onDeleteItem}) => {
-    
     return (
         <div role="table" className='w-100 py-2'>
             <TableHeader headers={headers} />

@@ -109,7 +109,8 @@
     outline-color: var(--white);
   }
 .button-itm-outline{
-  border: 1px solid var(--dark-blue);
+  outline: 1px solid var(--dark-blue);
+  border: none;
   color: var(--dark-blue);
   transition: all 0.3s ease-in-out;
   background-color: transparent;

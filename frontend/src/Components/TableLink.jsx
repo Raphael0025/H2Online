@@ -17,7 +17,7 @@ const TableBody = ({dataContents, height}) => {
         {dataContents.map((data) => (
             <div role='row' key={data.id} className='table-row d-flex text-center py-2 rounded-3'>
             {Object.values(data).map((value, index) => (
-                <span className='w-100' role='cell' key={index}>
+                <span className='w-100 text-truncate ' style={{fontSize: '12px'}} role='cell' key={index}>
                     {value}
                 </span>
             ))}
