@@ -2,7 +2,7 @@ import React from 'react'
 
 const TableLink = ({data, headers, height='420px'}) => {
     
-    return (
+    return ( 
         <div role="table" className='w-100'>
             <TableHeader headers={headers} />
             <TableBody dataContents={data} height={height}/>

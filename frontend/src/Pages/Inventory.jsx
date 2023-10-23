@@ -1,71 +1,11 @@
 import React, { useState } from 'react';
 import { ItemCard } from 'Components';
-
+import {inventoryContents} from 'Utils/initialData'
+import { filterInventoryItems, getStockStatus } from 'Utils/handlingFunctions'
 const Inventory = () => {
     const [selectedTab, setSelectedTab] = useState('All');
-    const sampleContents = [
-        {
-            item: 'Square Gallon',
-            max: 50,
-            stock: 20,
-            unitPrice: 340,
-        },
-        {
-            item: 'Square Gallon',
-            max: 50,
-            stock: 35,
-            unitPrice: 340,
-        },
-        {
-            item: 'Square Gallon',
-            max: 50,
-            stock: 20,
-            unitPrice: 340,
-        },
-        {
-            item: 'Square Gallon',
-            max: 50,
-            stock: 15,
-            unitPrice: 340,
-        },
-        {
-            item: 'Square Gallon',
-            max: 25,
-            stock: 25,
-            unitPrice: 340,
-        },
-        {
-            item: 'Square Gallon',
-            max: 70,
-            stock: 14,
-            unitPrice: 340,
-        },
-    ]
-    // Function to filter items based on the selected tab
-    const filterItems = (tab) => {
-        if (tab === 'All') {
-            return sampleContents;
-        } else {
-            return sampleContents.filter((item) => {
-                const stockStatus = getStockStatus(item.stock, item.max);
-                return stockStatus === tab;
-            });
-        }
-    };
-    // Function to determine stock status
-    const getStockStatus = (stock, max) => {
-        if (stock <= 0) {
-            return 'Out of Stock';
-        } else if (stock <= max * 0.2) {
-            return 'Low Stock';
-        } else if (stock <= max * 0.5) {
-            return 'Half Stock';
-        } else {
-            return 'Full Stock';
-        }
-    };
-    
-    const filteredItems = filterItems(selectedTab);
+    // Function to filter items based on the selected tab and Function to determine stock status
+    const filteredItems = filterInventoryItems(inventoryContents, getStockStatus, selectedTab);
 
     return (
         <main id='inventory' className='container-fluid h-100'>

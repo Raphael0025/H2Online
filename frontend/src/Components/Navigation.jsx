@@ -10,17 +10,14 @@ import { MDIcon, IconPark, InventoryIcon } from '../Assets/SvgIcons'
 import { mdiPrinterPos, mdiPrinterPosOutline, mdiTruckDeliveryOutline, mdiTruckDelivery } from '@mdi/js';
 import { format } from 'date-fns';
 import { Link } from 'react-router-dom'
+import { handleActiveItem, iconPath, formattedDate, formattedTime } from 'Utils/handlingFunctions'
 
 const Navigation = () => {
     const [currentDateTime, setCurrentDateTime] = useState(new Date());
+    const [item, setItem] = useState('dashboard');
+    
     const userName = 'Raphael Isla'
     const urlImg = av || '';
-
-    const [item, setItem] = useState('dashboard');
-    const delivery = item === 'pickup' ? 'icon-park-solid:delivery' : 'icon-park-outline:delivery'
-    const dash = item === 'dashboard' ? 'bxs:dashboard': 'humbleicons:dashboard'
-    const truck = item === 'logistic' ? mdiTruckDelivery : mdiTruckDeliveryOutline
-    const printer = item === 'pos' ? mdiPrinterPos : mdiPrinterPosOutline
 
     useEffect(() => {
         const intervalId = setInterval(() => {
@@ -28,59 +25,53 @@ const Navigation = () => {
         }, 1000);
         return () => clearInterval(intervalId);
     }, []);
-    const formattedDate = format(currentDateTime, 'MMM. dd, yyyy, E');
-    const formattedTime = format(currentDateTime, 'hh:mm a');
-
-    const handleActiveItem = (item) => {
-        setItem(item)
-    }
 
     return (
         <>
             <aside id='side' className='position-fixed top-0 left-0 bottom-0 bg-light py-2 px-1 gap-5 d-flex align-items-center flex-column'>
                 <img src={logo} width={'40%'} alt='logo' />
                 <ul className='list-unstyled d-flex flex-column gap-1'>
-                    <li className='list-itm px-2 py-2 rounded-2' onClick={() => handleActiveItem('dashboard')}>
+                    <li className='list-itm px-2 py-2 rounded-2' onClick={() => handleActiveItem('dashboard', setItem)}>
                         <Link to='dashboard' className='gap-2 text-decoration-none d-flex align-items-center fw-medium'>
-                            <IconPark path={dash} size={30} /> Dashboard
+                            <IconPark path={iconPath(item, 'dashboard', 'bxs:dashboard', 'humbleicons:dashboard')} size={30} /> Dashboard
                         </Link>
                     </li>
-                    <li className='list-itm px-2 py-2 rounded-2' onClick={() => handleActiveItem('customer')}>
+                    <li className='list-itm px-2 py-2 rounded-2' onClick={() => handleActiveItem('customer', setItem)}>
                         <Link to='customer-management' className='gap-2 text-decoration-none d-flex align-items-center fw-medium'>
                             {item === 'customer' ? <BsPeopleFill size={30} /> : <BsPeople size={30} />} Customers
                         </Link>
                     </li>
-                    <li className='list-itm px-2 py-2 rounded-2' onClick={() => handleActiveItem('pos')}>
+                    <li className='list-itm px-2 py-2 rounded-2' onClick={() => handleActiveItem('pos', setItem)}>
                         <Link to='point-of-sales'  className='gap-2 text-decoration-none d-flex align-items-center fw-medium'>
-                            <MDIcon icon={printer} size={'32px'} color='#003E81' /> Point of Sales
+                            <MDIcon icon={iconPath(item, 'pos', mdiPrinterPos, mdiPrinterPosOutline)} size={'32px'} color='#003E81' /> Point of Sales
                         </Link>
                     </li>
-                    <li className='list-itm px-2 py-2 rounded-2' onClick={() => handleActiveItem('order')}>
+                    <li className='list-itm px-2 py-2 rounded-2' onClick={() => handleActiveItem('order', setItem)}>
                         <Link to='order-mgmt' className='gap-2 text-decoration-none d-flex align-items-center fw-medium'>
                             {item === 'order' ? <IoCart size={30} /> : <IoCartOutline size={30} />} Orders
                         </Link>
                     </li>
-                    <li className='list-itm px-2 py-2 rounded-2' onClick={() => handleActiveItem('sale')}>
+                    <li className='list-itm px-2 py-2 rounded-2' onClick={() => handleActiveItem('sale', setItem)}>
                         <Link to='sales-mgmt' className='gap-2 text-decoration-none d-flex align-items-center fw-medium'>
                             {item === 'sale' ? <PiCoinsFill size={30} /> : <PiCoins size={30} />} Sales
                         </Link>
                     </li>
-                    <li className='list-itm px-2 py-2 rounded-2' onClick={() => handleActiveItem('logistic')}>
+                    <li className='list-itm px-2 py-2 rounded-2' onClick={() => handleActiveItem('logistic', setItem)}>
                         <Link to='logistic' className='gap-2 text-decoration-none d-flex align-items-center fw-medium'>
-                            <MDIcon icon={truck} size={'32px'} color='#003E81'/> Logistics
+                            <MDIcon icon={iconPath(item, 'logistic', mdiTruckDelivery, mdiTruckDeliveryOutline)} size={'32px'} color='#003E81'/> Logistics
                         </Link>
                     </li>
-                    <li className='list-itm px-2 py-2 rounded-2' onClick={() => handleActiveItem('pickup')}>
+                    <li className='list-itm px-2 py-2 rounded-2' onClick={() => handleActiveItem('pickup', setItem)}>
                         <Link to='booking' className='gap-2 text-decoration-none d-flex align-items-center fw-medium'>
-                            <IconPark path={delivery} size={30} /> Pick-up
+                            <IconPark path={iconPath(item, 'pickup', 'icon-park-solid:delivery', 'icon-park-outline:delivery')} size={30} /> Pick-up
                         </Link>
                     </li>
-                    <li className='list-itm px-2 py-2 rounded-2' onClick={() => handleActiveItem('inventory')}>
+                    <li className='list-itm px-2 py-2 rounded-2' onClick={() => handleActiveItem('inventory', setItem)}>
                         <Link to='inventory' className='gap-2 text-decoration-none d-flex align-items-center fw-medium'>
                             <InventoryIcon color={'#003E81'} filled={item === 'inventory'} size={30} /> Inventory
                         </Link>
                     </li>
-                    <li className='list-itm px-2 py-2 rounded-2' onClick={() => handleActiveItem('meter')}>
+                    <li className='list-itm px-2 py-2 rounded-2' onClick={() => handleActiveItem('meter', setItem)}>
                         <Link to='meter-reading' className='gap-2 text-decoration-none d-flex align-items-center fw-medium'>
                             {item === 'meter' ? <BsSpeedometer size={30} /> : <BsSpeedometer2 size={30} />} Meter Reading
                         </Link>
@@ -93,8 +84,8 @@ const Navigation = () => {
                     <p className='fw-medium m-0'>Hello <span className='uName fw-bold m-0'>{userName}</span>!</p>
                 </div>
                 <div className='w-50 pe-5 d-flex justify-content-end align-items-center gap-3'>
-                    <div className='fw-medium rounded-3 py-2 px-3 bg-light d-flex align-items-center justify-content-center gap-1'><BsFillClockFill size={16} color={'#005EC3'}/>{formattedTime}</div>
-                    <div className='fw-medium rounded-3 py-2 px-3 bg-light d-flex align-items-center justify-content-center gap-1'><BsCalendar3 size={16} color={'#005EC3'}/>{formattedDate}</div>
+                    <div className='fw-medium rounded-3 py-2 px-3 bg-light d-flex align-items-center justify-content-center gap-1'><BsFillClockFill size={16} color={'#005EC3'}/>{formattedTime(format, currentDateTime)}</div>
+                    <div className='fw-medium rounded-3 py-2 px-3 bg-light d-flex align-items-center justify-content-center gap-1'><BsCalendar3 size={16} color={'#005EC3'}/>{formattedDate(format, currentDateTime)}</div>
                     <div className='d-flex gap-3'>
                         <a href='/' className='itm'>
                             <BiSolidMessage size={22}/>

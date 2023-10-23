@@ -1,8 +1,9 @@
-import React, { useState, useEffect, useCallback, useMemo } from 'react'
-import { OverviewComponent, Table } from 'Components'
-
+import React, { useState, useEffect, useCallback} from 'react'
+import { OverviewComponent, Table, TableLink } from 'Components'
+import { sortContents } from 'Utils/handlingFunctions'
+import {sampleCustomers} from 'Utils/initialData'
 const CustomerMgmt = () => {
-    const sampleData = [
+    const header = [
         {
             header: 'Total Customers',
             icon: 'bi:people-fill'
@@ -13,203 +14,15 @@ const CustomerMgmt = () => {
         }
     ]
     const content = [500, 50]
-
     const headers = ['ID', 'Customer Name', 'Contact', 'Address', 'Total Credit', 'Account Creation', 'Agua Coins']
-    const sampleContents = useMemo(() => [
-        {
-            id: '2223335674890673',
-            name: 'Raphael Isla',
-            phone: '09269603768',
-            address: '558 M De Jesus St.',
-            credit: 0,
-            createdAt: 'Oct 6, 2023',
-            coins: 825
-        },
-        {
-            id: '1113335674890673',
-            name: 'Joshua Isla',
-            phone: '09269603768',
-            address: '558 M De Jesus St.',
-            credit: 5070,
-            createdAt: 'Sept 6, 2023',
-            coins: 275
-        },
-        {
-            id: '1223335674890673',
-            name: 'Micheal Isla',
-            phone: '09269603768',
-            address: '558 M De Jesus St.',
-            credit: 5060,
-            createdAt: 'Aug 6, 2023',
-            coins: 265
-        },
-        {
-            id: '3423335674890673',
-            name: 'Epifanio Isla',
-            phone: '09269603768',
-            address: '558 M De Jesus St.',
-            credit: 5005,
-            createdAt: 'Jan 6, 2023',
-            coins: 525
-        },
-        {
-            id: '3423321674890673',
-            name: 'Mae Isla',
-            phone: '09269603768',
-            address: '558 M De Jesus St.',
-            credit: 1500,
-            createdAt: 'Mar 6, 2023',
-            coins: 245
-        },
-        {
-            id: '3423335612390673',
-            name: 'Gerardo Isla',
-            phone: '09269603768',
-            address: '558 M De Jesus St.',
-            credit: 2500,
-            createdAt: 'May 6, 2023',
-            coins: 225
-        },
-        {
-            id: '3423335600090673',
-            name: 'Maria Isla',
-            phone: '09269603768',
-            address: '558 M De Jesus St.',
-            credit: 1500,
-            createdAt: 'Jul 6, 2023',
-            coins: 245
-        },
-        {
-            id: '3423339994890673',
-            name: 'Jeselle  Isla',
-            phone: '09269603768',
-            address: '558 M De Jesus St.',
-            credit: 500,
-            createdAt: 'Feb 6, 2023',
-            coins: 235
-        },
-        {
-            id: '3423338884890673',
-            name: 'Juan Isla',
-            phone: '09269603768',
-            address: '558 M De Jesus St.',
-            credit: 5100,
-            createdAt: 'Apr 6, 2023',
-            coins: 225
-        },
-        {
-            id: '3423335622290673',
-            name: 'Alan Isla',
-            phone: '09269603768',
-            address: '558 M De Jesus St.',
-            credit: 5200,
-            createdAt: 'Jan 6, 2023',
-            coins: 215
-        },
-        {
-            id: '3423335333890673',
-            name: 'Raphael Isla 3',
-            phone: '09269603768',
-            address: '558 M De Jesus St.',
-            credit: 0,
-            createdAt: 'june 6, 2023',
-            coins: 25
-        },
-        {
-            id: '3423335777890673',
-            name: 'Raphael Isla 4',
-            phone: '09269603768',
-            address: '558 M De Jesus St.',
-            credit: 500,
-            createdAt: 'june 6, 2023',
-            coins: 25
-        },
-        {
-            id: '3423335444890673',
-            name: 'Raphael Isla 5',
-            phone: '09269603768',
-            address: '558 M De Jesus St.',
-            credit: 500,
-            createdAt: 'june 6, 2023',
-            coins: 25
-        },
-        {
-            id: '3423335554890673',
-            name: 'Raphael Isla',
-            phone: '09269603768',
-            address: '558 M De Jesus St.',
-            credit: 500,
-            createdAt: 'june 6, 2023',
-            coins: 25
-        },
-        {
-            id: '3423335656490673',
-            name: 'Raphael Isla 6',
-            phone: '09269603768',
-            address: '558 M De Jesus St.',
-            credit: 0,
-            createdAt: 'june 6, 2023',
-            coins: 25
-        },
-        {
-            id: '3423323174890673',
-            name: 'Raphael Isla 7',
-            phone: '09269603768',
-            address: '558 M De Jesus St.',
-            credit: 0,
-            createdAt: 'june 6, 2023',
-            coins: 25
-        },
-        {
-            id: '3423789674890673',
-            name: 'Raphael Isla 8',
-            phone: '09269603768',
-            address: '558 M De Jesus St.',
-            credit: 0,
-            createdAt: 'june 6, 2023',
-            coins: 25
-        },
-        {
-            id: '3423335673420673',
-            name: 'Raphael Isla 9',
-            phone: '09269603768',
-            address: '558 M De Jesus St.',
-            credit: 0,
-            createdAt: 'june 6, 2023',
-            coins: 25
-        },
-        {
-            id: '3423335674567673',
-            name: 'Raphael Isla 10',
-            phone: '09269603768',
-            address: '558 M De Jesus St.',
-            credit: 0,
-            createdAt: 'june 6, 2023',
-            coins: 25
-        },
-    ], []);
 
     const [searchQuery, setSearchQuery] = useState('');
     const [sortOrder, setSortOrder] = useState('Latest'); // Default sort order
-    const [filteredContents, setFilteredContents] = useState(sampleContents);
+    const [filteredContents, setFilteredContents] = useState(sampleCustomers);
     const [selectedTab, setSelectedTab] = useState('All');
 
-    const sortSampleContents = (contents, order) => {
-        const sortedContents = [...contents];
-        if (order === 'Agua Coins') {
-            sortedContents.sort((a, b) => b.coins - a.coins);
-        } else if (order === 'Total Credits') {
-            sortedContents.sort((a, b) => b.credit - a.credit);
-        } else if (order === 'Latest') {
-            sortedContents.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
-        } else if (order === 'Oldest') {
-            sortedContents.sort((a, b) => new Date(a.createdAt) - new Date(b.createdAt));
-        }
-        return sortedContents;
-    };
-
     const updateFilteredContents = useCallback(() => {
-        let filtered = sampleContents;
+        let filtered = sampleCustomers;
 
         if (selectedTab === 'Credited') {
             filtered = filtered.filter((content) => content.credit > 0);
@@ -218,16 +31,14 @@ const CustomerMgmt = () => {
         filtered = filtered.filter((content) =>
             content.name.toLowerCase().includes(searchQuery.toLowerCase())
         );
-
-        filtered = sortSampleContents(filtered, sortOrder);
+        filtered = sortContents(filtered, sortOrder);
 
         setFilteredContents(filtered);
-    }, [sampleContents, searchQuery, sortOrder, selectedTab]);
+    }, [searchQuery, sortOrder, selectedTab]);
 
     useEffect(() => {
-        // Update finalContents whenever the sortOrder changes
-        updateFilteredContents();
-    }, [sortOrder, searchQuery, updateFilteredContents]);
+        updateFilteredContents() // Update finalContents whenever the sortOrder changes
+    }, [sortOrder, searchQuery, updateFilteredContents])
     
     return (
         <main id='customer' className='container-fluid'>
@@ -235,7 +46,7 @@ const CustomerMgmt = () => {
                 <h2 className='border-bottom py-2 border-dark-subtle page-header'>Customer List</h2>
             </div>
             <section className='container-fluid px-3 py-3 d-flex' style={{gap: '20px'}}>
-            {sampleData.map((data, indx) => (
+            {header.map((data, indx) => (
                 <OverviewComponent heading={data} content={content[indx]} key={indx} width={'250px'} />
             ))}
             </section>

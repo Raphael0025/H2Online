@@ -1,82 +1,8 @@
 import React from 'react'
 import { BookingItem } from 'Components'
+import { reservations } from 'Utils/initialData'
 
 const LogisticBooking = () => {
-    const reservations = [
-        {
-            'id': '2587954632156312',
-            'customer_id': '5687499621036520',
-            'address': '558 M De Jesus St.',
-            'schedule': 'Jun 7, 2023, Mon. 3:30 PM every 3 days',
-            'creationDate': 'Jun 4, 2023, Mon. 3:30 PM',
-            'phone': '09269607368'
-        },
-        {
-            'id': '2587954632156312',
-            'customer_id': '5687499621036520',
-            'address': '558 M De Jesus St.',
-            'schedule': 'Jun 7, 2023, Mon. 3:30 PM every 3 days',
-            'creationDate': 'Jun 4, 2023, Mon. 3:30 PM',
-            'phone': '09269607368'
-        },
-        {
-            'id': '2587954632156312',
-            'customer_id': '5687499621036520',
-            'address': '558 M De Jesus St.',
-            'schedule': 'Jun 7, 2023, Mon. 3:30 PM every 3 days',
-            'creationDate': 'Jun 4, 2023, Mon. 3:30 PM',
-            'phone': '09269607368'
-        },
-        {
-            'id': '2587954632156312',
-            'customer_id': '5687499621036520',
-            'address': '558 M De Jesus St.',
-            'schedule': 'Jun 7, 2023, Mon. 3:30 PM every 3 days',
-            'creationDate': 'Jun 4, 2023, Mon. 3:30 PM',
-            'phone': '09269607368'
-        },
-        {
-            'id': '2587954632156312',
-            'customer_id': '5687499621036520',
-            'address': '558 M De Jesus St.',
-            'schedule': 'Jun 7, 2023, Mon. 3:30 PM every 3 days',
-            'creationDate': 'Jun 4, 2023, Mon. 3:30 PM',
-            'phone': '09269607368'
-        },
-        {
-            'id': '2587954632156312',
-            'customer_id': '5687499621036520',
-            'address': '558 M De Jesus St.',
-            'schedule': 'Jun 7, 2023, Mon. 3:30 PM every 3 days',
-            'creationDate': 'Jun 4, 2023, Mon. 3:30 PM',
-            'phone': '09269607368'
-        },
-        {
-            'id': '2587954632156312',
-            'customer_id': '5687499621036520',
-            'address': '558 M De Jesus St.',
-            'schedule': 'Jun 7, 2023, Mon. 3:30 PM every 3 days',
-            'creationDate': 'Jun 4, 2023, Mon. 3:30 PM',
-            'phone': '09269607368'
-        },
-        {
-            'id': '2587954632156312',
-            'customer_id': '5687499621036520',
-            'address': '558 M De Jesus St.',
-            'schedule': 'Jun 7, 2023, Mon. 3:30 PM every 3 days',
-            'creationDate': 'Jun 4, 2023, Mon. 3:30 PM',
-            'phone': '09269607368'
-        },
-        {
-            'id': '2587954632156312',
-            'customer_id': '5687499621036520',
-            'address': '558 M De Jesus St.',
-            'schedule': 'Jun 7, 2023, Mon. 3:30 PM every 3 days',
-            'creationDate': 'Jun 4, 2023, Mon. 3:30 PM',
-            'phone': '09269607368'
-        }
-    ]
-    
     return (
         <main id='booking' className='container-fluid h-100'>
             <div className='px-3 pt-3 heading'>

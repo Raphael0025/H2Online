@@ -1,5 +1,5 @@
 import React from 'react'
-import { IconPark } from '../Assets/SvgIcons'
+import { IconPark } from '../../Assets/SvgIcons'
 
 const OverviewComponent = ({heading, content, width = ''}) => {
     

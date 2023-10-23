@@ -1,5 +1,7 @@
 import React, {useState} from 'react'
 import { OverviewComponent, Table } from 'Components'
+import { logisticsData } from 'Utils/initialData'
+import {filteredLogisticData} from 'Utils/handlingFunctions'
 
 const Logistics = () => {
     const heading = [
@@ -25,139 +27,8 @@ const Logistics = () => {
         },
     ]
     const headers = ['Delivery ID', 'Order ID', 'Customer', 'Phone', 'Address', 'Courier', 'Progress', 'Delivered At']
-    const sampleData = [
-        {
-            id: '5689237845124679',
-            order_id: '7889455612237946',
-            customer: 'Raphael Isla',
-            phone: '09269607368',
-            address: '558 M De Jesus St.',
-            courier: 'Warlito',
-            progress: 'Awaiting Delivery',
-            delivered_at: 'Oct 10, 2023, Mon, 3:30 PM'
-        },
-        {
-            id: '5689237845124679',
-            order_id: '7889455612237946',
-            customer: 'Raphael Isla',
-            phone: '09269607368',
-            address: '558 M De Jesus St.',
-            courier: 'Warlito',
-            progress: 'Awaiting Delivery',
-            delivered_at: 'Oct 10, 2023, Mon, 3:30 PM'
-        },
-        {
-            id: '5689237845124679',
-            order_id: '7889455612237946',
-            customer: 'Raphael Isla',
-            phone: '09269607368',
-            address: '558 M De Jesus St.',
-            courier: 'Warlito',
-            progress: 'Complete',
-            delivered_at: 'Oct 10, 2023, Mon, 3:30 PM'
-        },
-        {
-            id: '5689237845124679',
-            order_id: '7889455612237946',
-            customer: 'Raphael Isla',
-            phone: '09269607368',
-            address: '558 M De Jesus St.',
-            courier: 'Warlito',
-            progress: 'Complete',
-            delivered_at: 'Oct 10, 2023, Mon, 3:30 PM'
-        },
-        {
-            id: '5689237845124679',
-            order_id: '7889455612237946',
-            customer: 'Raphael Isla',
-            phone: '09269607368',
-            address: '558 M De Jesus St.',
-            courier: 'Warlito',
-            progress: 'On Site Refill',
-            delivered_at: 'Oct 10, 2023, Mon, 3:30 PM'
-        },
-        {
-            id: '5689237845124679',
-            order_id: '7889455612237946',
-            customer: 'Raphael Isla',
-            phone: '09269607368',
-            address: '558 M De Jesus St.',
-            courier: 'Warlito',
-            progress: 'On Site Refill',
-            delivered_at: 'Oct 10, 2023, Mon, 3:30 PM'
-        },
-        {
-            id: '5689237845124679',
-            order_id: '7889455612237946',
-            customer: 'Raphael Isla',
-            phone: '09269607368',
-            address: '558 M De Jesus St.',
-            courier: 'Warlito',
-            progress: 'Out for Delivery',
-            delivered_at: 'Oct 10, 2023, Mon, 3:30 PM'
-        },
-        {
-            id: '5689237845124679',
-            order_id: '7889455612237946',
-            customer: 'Raphael Isla',
-            phone: '09269607368',
-            address: '558 M De Jesus St.',
-            courier: 'Warlito',
-            progress: 'Out for Delivery',
-            delivered_at: 'Oct 10, 2023, Mon, 3:30 PM'
-        },
-        {
-            id: '5689237845124679',
-            order_id: '7889455612237946',
-            customer: 'Raphael Isla',
-            phone: '09269607368',
-            address: '558 M De Jesus St.',
-            courier: 'Warlito',
-            progress: 'Awaiting Delivery',
-            delivered_at: 'Oct 10, 2023, Mon, 3:30 PM'
-        },
-        {
-            id: '5689237845124679',
-            order_id: '7889455612237946',
-            customer: 'Raphael Isla',
-            phone: '09269607368',
-            address: '558 M De Jesus St.',
-            courier: 'Warlito',
-            progress: 'Awaiting Delivery',
-            delivered_at: 'Oct 10, 2023, Mon, 3:30 PM'
-        },
-        {
-            id: '5689237845124679',
-            order_id: '7889455612237946',
-            customer: 'Raphael Isla',
-            phone: '09269607368',
-            address: '558 M De Jesus St.',
-            courier: 'Warlito',
-            progress: 'For Pickup',
-            delivered_at: 'Oct 10, 2023, Mon, 3:30 PM'
-        },
-        {
-            id: '5689237845124679',
-            order_id: '7889455612237946',
-            customer: 'Raphael Isla',
-            phone: '09269607368',
-            address: '558 M De Jesus St.',
-            courier: 'Warlito',
-            progress: 'For Pickup',
-            delivered_at: 'Oct 10, 2023, Mon, 3:30 PM'
-        }
-    ]
-
     const content = [35, 6, 12, 5, 25]
     const [selectedTab, setSelectedTab] = useState('All');
-
-    // Filter the data based on the selected tab
-    const filteredData = sampleData.filter((data) => {
-        if (selectedTab === 'All') {
-            return true; // Show all data
-        }
-        return data.progress.toLowerCase() === selectedTab.toLowerCase();
-    });
 
     return (
         <main id='logistic' className='container-fluid h-100'>
@@ -195,7 +66,7 @@ const Logistics = () => {
                         <button className='button-itm py-2 px-3 rounded-3'>+ Activity</button>
                     </div>
                 </header>
-                <Table headers={headers} data={filteredData} />
+                <Table headers={headers} data={filteredLogisticData(logisticsData, selectedTab)} />
             </section>
         </main>
     )
