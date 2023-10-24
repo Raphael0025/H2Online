@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import { OverviewComponent, AccordionTable, Table } from 'Components'
-
+import { salesTableData, productsSoldData, expensesData } from 'Utils/initialData'
+import { filteredTableData } from 'Utils/handlingFunctions'
 const SalesMgmt = () => {
     const headers = [
         {
@@ -25,220 +26,11 @@ const SalesMgmt = () => {
         }
     ]
     const contents = ['P 2000', 'P 750', 'P 1000', 'P 1500', 'P 1200']
-    const [selectedTab, setSelectedTab] = useState('All');
     const tableHeader = ['Order ID', 'Date', 'Customer', 'Items', 'Total', 'Service', 'Payment', 'Vendor', 'Delivery']
-    const tableData = [
-        {
-            id: '7946137845128951',
-            date: 'Oct 10, 2023',
-            customer: 'Raphael Isla',
-            items: 2,
-            total: 50.00,
-            service: 'Refill',
-            payment: 'Paid',
-            vendor: 'Kristine',
-            delivery: 'Complete'
-        },
-        {
-            id: '7946137845128952',
-            date: 'Oct 10, 2023',
-            customer: 'Raphael Isla',
-            items: 2,
-            total: 50.00,
-            service: 'Refill',
-            payment: 'Credited',
-            vendor: 'Kristine',
-            delivery: 'Complete'
-        },
-        {
-            id: '7946137845128953',
-            date: 'Oct 10, 2023',
-            customer: 'Raphael Isla',
-            items: 2,
-            total: 50.00,
-            service: 'Refill',
-            payment: 'Paid',
-            vendor: 'Kristine',
-            delivery: 'Complete'
-        },
-        {
-            id: '7946137845128954',
-            date: 'Oct 10, 2023',
-            customer: 'Raphael Isla',
-            items: 2,
-            total: 50.00,
-            service: 'Refill',
-            payment: 'Paid',
-            vendor: 'Kristine',
-            delivery: 'Complete'
-        },
-        {
-            id: '7946137845128955',
-            date: 'Oct 10, 2023',
-            customer: 'Raphael Isla',
-            items: 2,
-            total: 50.00,
-            service: 'Refill',
-            payment: 'Paid',
-            vendor: 'Kristine',
-            delivery: 'Complete'
-        },
-        {
-            id: '7946137845128956',
-            date: 'Oct 10, 2023',
-            customer: 'Raphael Isla',
-            items: 2,
-            total: 50.00,
-            service: 'Refill',
-            payment: 'Paid',
-            vendor: 'Kristine',
-            delivery: 'Complete'
-        },
-        {
-            id: '7946137845128957',
-            date: 'Oct 10, 2023',
-            customer: 'Raphael Isla',
-            items: 2,
-            total: 50.00,
-            service: 'Refill',
-            payment: 'Pending',
-            vendor: 'Kristine',
-            delivery: 'Complete'
-        },
-        {
-            id: '7946137845128958',
-            date: 'Oct 10, 2023',
-            customer: 'Raphael Isla',
-            items: 2,
-            total: 50.00,
-            service: 'Refill',
-            payment: 'Credited',
-            vendor: 'Kristine',
-            delivery: 'Complete'
-        },
-        {
-            id: '7946137845128959',
-            date: 'Oct 10, 2023',
-            customer: 'Raphael Isla',
-            items: 2,
-            total: 50.00,
-            service: 'Refill',
-            payment: 'Credited',
-            vendor: 'Kristine',
-            delivery: 'Complete'
-        },
-        {
-            id: '7946137845128960',
-            date: 'Oct 10, 2023',
-            customer: 'Raphael Isla',
-            items: 2,
-            total: 50.00,
-            service: 'Refill',
-            payment: 'Credited',
-            vendor: 'Kristine',
-            delivery: 'Complete'
-        },
-        {
-            id: '7946137845128961',
-            date: 'Oct 10, 2023',
-            customer: 'Raphael Isla',
-            items: 2,
-            total: 50.00,
-            service: 'Refill',
-            payment: 'Pending',
-            vendor: 'Kristine',
-            delivery: 'Complete'
-        },
-        {
-            id: '7946137845128962',
-            date: 'Oct 10, 2023',
-            customer: 'Raphael Isla',
-            items: 2,
-            total: 50.00,
-            service: 'Refill',
-            payment: 'Pending',
-            vendor: 'Kristine',
-            delivery: 'Complete'
-        }
-    ]
     const productsSoldHeaders = ['Product', 'Price', 'Sold(pcs)', 'Interactions']
-    const productsSoldData = [
-        {
-            product: 'Square Gallon',
-            price: 500.00,
-            pcs: 50,
-            interactions: 'Purchase'
-        },
-        {
-            product: 'Round Gallon',
-            price: 500.00,
-            pcs: 50,
-            interactions: 'Purchase'
-        },
-        {
-            product: '250 ml',
-            price: 500.00,
-            pcs: 50,
-            interactions: 'Purchase'
-        },
-        {
-            product: 'Square Gallon',
-            price: 500.00,
-            pcs: 50,
-            interactions: 'Purchase'
-        },
-        {
-            product: '10 Liters',
-            price: 500.00,
-            pcs: 50,
-            interactions: 'Purchase'
-        },
-        {
-            product: '500 ml',
-            price: 500.00,
-            pcs: 50,
-            interactions: 'Purchase'
-        }
-    ]
     const expensesHeaders = ['Date', 'Item', 'Quantity', 'Unit Price', 'Amount']
-    const expensesData = [
-        {
-            date: 'Oct 10, 2023, Mon, 3:30 PM',
-            item: 'ballpen',
-            qty: 2,
-            unit_price: 8,
-            total: 16.00
-        },
-        {
-            date: 'Oct 10, 2023, Mon, 3:30 PM',
-            item: 'Food Allowance',
-            qty: 2,
-            unit_price: 60,
-            total: 120.00
-        },
-        {
-            date: 'Oct 10, 2023, Mon, 3:30 PM',
-            item: 'Merienda',
-            qty: 2,
-            unit_price: 20,
-            total: 40.00
-        },
-        {
-            date: 'Oct 10, 2023, Mon, 3:30 PM',
-            item: 'Glue Stick',
-            qty: 3,
-            unit_price: 20,
-            total: 60.00
-        }
-    ]
 
-    // Filter the data based on the selected tab
-    const filteredData = tableData.filter((data) => {
-        if (selectedTab === 'All') {
-            return true; // Show all data
-        }
-        return data.payment.toLowerCase() === selectedTab.toLowerCase();
-    });
+    const [selectedTab, setSelectedTab] = useState('All');
 
     return (
         <main id='sales' className='container-fluid'>
@@ -269,7 +61,7 @@ const SalesMgmt = () => {
                         </li>
                     </ul>
                 </header>
-                <AccordionTable headers={tableHeader} rowColor={'un-select-two'} data={filteredData} height={'300px'} />
+                <AccordionTable headers={tableHeader} rowColor={'un-select-two'} data={filteredTableData(salesTableData, selectedTab)} height={'300px'} />
             </section>
             <section className='container-fluid p-3 d-flex gap-3'>
                 <div className='bg-light flex-fill p-3 rounded-3'>

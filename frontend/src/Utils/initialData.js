@@ -1,3 +1,84 @@
+import square from 'Assets/images/square.png'
+import round from 'Assets/images/round.png'
+import TenLiters from 'Assets/images/10Litre 1.png'
+import pep from 'Assets/images/bigPep.png'
+import bottle from 'Assets/images/pep 1.png'
+
+export const sampleItems = [
+    {
+        imge: square,
+        item: 'Square Gallon',
+        unit_price: 25,
+        service: 'Refill'
+    },
+    {
+        imge: round,
+        item: 'Round Gallon',
+        unit_price: 25,
+        service: 'Refill'
+    },
+    {
+        imge: TenLiters,
+        item: '10 Liters',
+        unit_price: 15,
+        service: 'Refill'
+    },
+    {
+        imge: pep,
+        item: '8 Liters',
+        unit_price: 14,
+        service: 'Refill'
+    },
+    {
+        imge: pep,
+        item: '7 Liters',
+        unit_price: 13,
+        service: 'Refill'
+    },
+    {
+        imge: pep,
+        item: '6 Liters',
+        unit_price: 12,
+        service: 'Refill'
+    },
+    {
+        imge: pep,
+        item: '5 Liters',
+        unit_price: 14,
+        service: 'Refill'
+    },
+    {
+        imge: pep,
+        item: '4 Liters',
+        unit_price: 12,
+        service: 'Refill'
+    },
+    {
+        imge: bottle,
+        item: '1 Liter',
+        unit_price: 15,
+        service: 'Refill'
+    },
+    {
+        imge: bottle,
+        item: '1.5 Liters',
+        unit_price: 15,
+        service: 'Refill'
+    },
+    {
+        imge: bottle,
+        item: '500ml',
+        unit_price: 15,
+        service: 'Refill'
+    },
+    {
+        imge: bottle,
+        item: '250ml',
+        unit_price: 15,
+        service: 'Refill'
+    }
+]
+
 export const sampleMeterData = [
     {
         date: "May/9/2023",
@@ -643,3 +724,463 @@ export const logisticsData = [
         delivered_at: 'Oct 10, 2023, Mon, 3:30 PM'
     }
 ]
+
+export const tableData = [
+    {
+        id: '7946137845128951',
+        date: 'Oct 10, 2023',
+        customer: 'Raphael Isla',
+        items: 2,
+        Total: 50.00,
+        payment: 'Paid',
+        vendor: 'Kristine',
+        Delivery: 'Complete'
+    },
+    {
+        id: '7946137845128952',
+        date: 'Oct 10, 2023',
+        customer: 'Raphael Isla',
+        items: 2,
+        Total: 50.00,
+        payment: 'Credited',
+        vendor: 'Kristine',
+        Delivery: 'Complete'
+    },
+    {
+        id: '7946137845128953',
+        date: 'Oct 10, 2023',
+        customer: 'Raphael Isla',
+        items: 2,
+        Total: 50.00,
+        payment: 'Paid',
+        vendor: 'Kristine',
+        Delivery: 'Complete'
+    },
+    {
+        id: '7946137845128954',
+        date: 'Oct 10, 2023',
+        customer: 'Raphael Isla',
+        items: 2,
+        Total: 50.00,
+        payment: 'Paid',
+        vendor: 'Kristine',
+        Delivery: 'Complete'
+    },
+    {
+        id: '7946137845128955',
+        date: 'Oct 10, 2023',
+        customer: 'Raphael Isla',
+        items: 2,
+        Total: 50.00,
+        payment: 'Paid',
+        vendor: 'Kristine',
+        Delivery: 'Complete'
+    },
+    {
+        id: '7946137845128956',
+        date: 'Oct 10, 2023',
+        customer: 'Raphael Isla',
+        items: 2,
+        Total: 50.00,
+        payment: 'Paid',
+        vendor: 'Kristine',
+        Delivery: 'Complete'
+    },
+    {
+        id: '7946137845128957',
+        date: 'Oct 10, 2023',
+        customer: 'Raphael Isla',
+        items: 2,
+        Total: 50.00,
+        payment: 'Pending',
+        vendor: 'Kristine',
+        Delivery: 'Complete'
+    },
+    {
+        id: '7946137845128958',
+        date: 'Oct 10, 2023',
+        customer: 'Raphael Isla',
+        items: 2,
+        Total: 50.00,
+        payment: 'Credited',
+        vendor: 'Kristine',
+        Delivery: 'Complete'
+    },
+    {
+        id: '7946137845128959',
+        date: 'Oct 10, 2023',
+        customer: 'Raphael Isla',
+        items: 2,
+        Total: 50.00,
+        payment: 'Credited',
+        vendor: 'Kristine',
+        Delivery: 'Complete'
+    },
+    {
+        id: '7946137845128960',
+        date: 'Oct 10, 2023',
+        customer: 'Raphael Isla',
+        items: 2,
+        Total: 50.00,
+        payment: 'Credited',
+        vendor: 'Kristine',
+        Delivery: 'Complete'
+    },
+    {
+        id: '7946137845128961',
+        date: 'Oct 10, 2023',
+        customer: 'Raphael Isla',
+        items: 2,
+        Total: 50.00,
+        payment: 'Pending',
+        vendor: 'Kristine',
+        Delivery: 'Complete'
+    },
+    {
+        id: '7946137845128962',
+        date: 'Oct 10, 2023',
+        customer: 'Raphael Isla',
+        items: 2,
+        Total: 50.00,
+        payment: 'Pending',
+        vendor: 'Kristine',
+        Delivery: 'Complete'
+    }
+]
+
+export const salesTableData = [
+    {
+        id: '7946137845128951',
+        date: 'Oct 10, 2023',
+        customer: 'Raphael Isla',
+        items: 2,
+        total: 50.00,
+        service: 'Refill',
+        payment: 'Paid',
+        vendor: 'Kristine',
+        delivery: 'Complete'
+    },
+    {
+        id: '7946137845128952',
+        date: 'Oct 10, 2023',
+        customer: 'Raphael Isla',
+        items: 2,
+        total: 50.00,
+        service: 'Refill',
+        payment: 'Credited',
+        vendor: 'Kristine',
+        delivery: 'Complete'
+    },
+    {
+        id: '7946137845128953',
+        date: 'Oct 10, 2023',
+        customer: 'Raphael Isla',
+        items: 2,
+        total: 50.00,
+        service: 'Refill',
+        payment: 'Paid',
+        vendor: 'Kristine',
+        delivery: 'Complete'
+    },
+    {
+        id: '7946137845128954',
+        date: 'Oct 10, 2023',
+        customer: 'Raphael Isla',
+        items: 2,
+        total: 50.00,
+        service: 'Refill',
+        payment: 'Paid',
+        vendor: 'Kristine',
+        delivery: 'Complete'
+    },
+    {
+        id: '7946137845128955',
+        date: 'Oct 10, 2023',
+        customer: 'Raphael Isla',
+        items: 2,
+        total: 50.00,
+        service: 'Refill',
+        payment: 'Paid',
+        vendor: 'Kristine',
+        delivery: 'Complete'
+    },
+    {
+        id: '7946137845128956',
+        date: 'Oct 10, 2023',
+        customer: 'Raphael Isla',
+        items: 2,
+        total: 50.00,
+        service: 'Refill',
+        payment: 'Paid',
+        vendor: 'Kristine',
+        delivery: 'Complete'
+    },
+    {
+        id: '7946137845128957',
+        date: 'Oct 10, 2023',
+        customer: 'Raphael Isla',
+        items: 2,
+        total: 50.00,
+        service: 'Refill',
+        payment: 'Pending',
+        vendor: 'Kristine',
+        delivery: 'Complete'
+    },
+    {
+        id: '7946137845128958',
+        date: 'Oct 10, 2023',
+        customer: 'Raphael Isla',
+        items: 2,
+        total: 50.00,
+        service: 'Refill',
+        payment: 'Credited',
+        vendor: 'Kristine',
+        delivery: 'Complete'
+    },
+    {
+        id: '7946137845128959',
+        date: 'Oct 10, 2023',
+        customer: 'Raphael Isla',
+        items: 2,
+        total: 50.00,
+        service: 'Refill',
+        payment: 'Credited',
+        vendor: 'Kristine',
+        delivery: 'Complete'
+    },
+    {
+        id: '7946137845128960',
+        date: 'Oct 10, 2023',
+        customer: 'Raphael Isla',
+        items: 2,
+        total: 50.00,
+        service: 'Refill',
+        payment: 'Credited',
+        vendor: 'Kristine',
+        delivery: 'Complete'
+    },
+    {
+        id: '7946137845128961',
+        date: 'Oct 10, 2023',
+        customer: 'Raphael Isla',
+        items: 2,
+        total: 50.00,
+        service: 'Refill',
+        payment: 'Pending',
+        vendor: 'Kristine',
+        delivery: 'Complete'
+    },
+    {
+        id: '7946137845128962',
+        date: 'Oct 10, 2023',
+        customer: 'Raphael Isla',
+        items: 2,
+        total: 50.00,
+        service: 'Refill',
+        payment: 'Pending',
+        vendor: 'Kristine',
+        delivery: 'Complete'
+    }
+]
+
+export const productsSoldData = [
+    {
+        product: 'Square Gallon',
+        price: 500.00,
+        pcs: 50,
+        interactions: 'Purchase'
+    },
+    {
+        product: 'Round Gallon',
+        price: 500.00,
+        pcs: 50,
+        interactions: 'Purchase'
+    },
+    {
+        product: '250 ml',
+        price: 500.00,
+        pcs: 50,
+        interactions: 'Purchase'
+    },
+    {
+        product: 'Square Gallon',
+        price: 500.00,
+        pcs: 50,
+        interactions: 'Purchase'
+    },
+    {
+        product: '10 Liters',
+        price: 500.00,
+        pcs: 50,
+        interactions: 'Purchase'
+    },
+    {
+        product: '500 ml',
+        price: 500.00,
+        pcs: 50,
+        interactions: 'Purchase'
+    }
+]
+
+export const expensesData = [
+    {
+        date: 'Oct 10, 2023, Mon, 3:30 PM',
+        item: 'ballpen',
+        qty: 2,
+        unit_price: 8,
+        total: 16.00
+    },
+    {
+        date: 'Oct 10, 2023, Mon, 3:30 PM',
+        item: 'Food Allowance',
+        qty: 2,
+        unit_price: 60,
+        total: 120.00
+    },
+    {
+        date: 'Oct 10, 2023, Mon, 3:30 PM',
+        item: 'Merienda',
+        qty: 2,
+        unit_price: 20,
+        total: 40.00
+    },
+    {
+        date: 'Oct 10, 2023, Mon, 3:30 PM',
+        item: 'Glue Stick',
+        qty: 3,
+        unit_price: 20,
+        total: 60.00
+    }
+]
+
+export const customers = [
+    {
+        "name": "Mrs. Weston White",
+        "contact": "(457) 482-5223 x756",
+        "address": "West North Alvisland, Robb Neck, 353",
+        "gallon_Ownership": [
+          {
+            "name": "Square Gallon",
+            "quantity": 5
+          },
+          {
+            "name": "Round Gallon",
+            "quantity": 3
+          },
+          {
+            "name": "10 Liters",
+            "quantity": 2
+          }
+        ]
+    },
+    {
+        "name": "Kristofer Barton",
+        "contact": "1-172-007-2924",
+        "address": "New North Karimouth, Dooley Place, 959",
+        "gallon_Ownership": [
+          {
+            "name": "Square Gallon",
+            "quantity": 2
+          },
+          {
+            "name": "Round Gallon",
+            "quantity": 1
+          },
+          {
+            "name": "8 Liters",
+            "quantity": 4
+          }
+        ]
+      },
+    {
+      "name": "Giovanni Zieme",
+      "contact": "660.793.2980 x3360",
+      "address": "South East Chad, Schamberger Drive, 70207"
+    },
+    {
+      "name": "Neoma Runolfsdottir",
+      "contact": "019-533-7965",
+      "address": "East Conradchester, West Route, 33573"
+    },
+    {
+      "name": "Hollis Keeling",
+      "contact": "(418) 931-1301",
+      "address": "Lake Jazminshire, Kutch Stravenue, 12861"
+    },
+    {
+      "name": "Marta Hagenes",
+      "contact": "1-354-772-2174 x5114",
+      "address": "East Lloydview, O'Kon Gateway, 53112"
+    },
+    {
+      "name": "Jude Schneider III",
+      "contact": "926-752-6635",
+      "address": "South South Allieland, Williamson Circle, 41376"
+    },
+    {
+      "name": "Mrs. Kianna Morar",
+      "contact": "(739) 786-1806 x420",
+      "address": "West Dalemouth, Kris Fields, 50847"
+    },
+    {
+      "name": "Lon Stokes",
+      "contact": "1-014-464-5081 x698",
+      "address": "Port Lake Mabel, Angela Park, 87389"
+    },
+    {
+      "name": "Jarret Littel",
+      "contact": "(053) 153-8929 x3174",
+      "address": "Lake North Deshaun, Camren Hills, 55861"
+    },
+    {
+      "name": "Christy Jaskolski",
+      "contact": "287.819.7179",
+      "address": "West Wintheiserburgh, Wyman Underpass, 41975"
+    },
+    {
+      "name": "Tito Nicolas",
+      "contact": "(705) 551-7361 x88009",
+      "address": "New Hoegerfort, Erica Tunnel, 72776"
+    },
+    {
+      "name": "Jason Abernathy",
+      "contact": "701-960-2550",
+      "address": "New Chaddton, Nicole Walk, 28771"
+    },
+    {
+      "name": "Oda Price",
+      "contact": "075-360-7730 x263",
+      "address": "West Roobhaven, Pfannerstill Mill, 95665"
+    },
+    {
+      "name": "Jovani Beatty",
+      "contact": "(661) 725-4464 x9183",
+      "address": "Lake Port Genesisside, Harber Centers, 45079"
+    },
+    {
+      "name": "Betty Gottlieb",
+      "contact": "(727) 730-5700 x4634",
+      "address": "East Hermistonville, Newton Track, 75279"
+    },
+    {
+      "name": "Aletha Walter",
+      "contact": "369.388.3994",
+      "address": "East Cronaton, Reilly Glen, 53375"
+    },
+    {
+      "name": "Ruthie VonRueden V",
+      "contact": "1-536-793-6292 x6177",
+      "address": "North Letitiaside, Welch Summit, 36526"
+    },
+    {
+      "name": "Joyce Breitenberg",
+      "contact": "1-175-562-7295 x082",
+      "address": "West Bauchbury, Sibyl Field, 64626"
+    },
+    {
+      "name": "Lane Gusikowski",
+      "contact": "726-289-2245 x79267",
+      "address": "East Astridburgh, Swaniawski Plains, 86633"
+    }
+]
+

@@ -1,22 +1,22 @@
 import React from 'react'
 import { IconPark } from 'Assets/SvgIcons' 
-
-const Receipt = ({data, headers, height='420px', onUpdateQuantity, onDeleteItem}) => {
+import {handleDeleteItem, handleUpdateQuantity} from 'Utils/handlingFunctions'
+const Receipt = ({data, headers, height='420px', selectedItems, setSelectedItems}) => {
     return (
         <div role="table" className='w-100 py-2'>
             <TableHeader headers={headers} />
-            <TableBody dataContents={data} height={height} onUpdateQuantity={onUpdateQuantity} onDeleteItem={onDeleteItem} />
+            <TableBody dataContents={data} height={height} selectedItems={selectedItems} setSelectedItems={setSelectedItems}/>
         </div>
     )
 }
 
-const TableBody = ({dataContents, height, onUpdateQuantity, onDeleteItem}) => {
+const TableBody = ({dataContents, height, selectedItems, setSelectedItems}) => {
 
     return(
         <div className='d-flex flex-column w-100 gap-1 table-container-two border' role='rowgroup' style={{height: height}}>
         {dataContents.map((data, indx) => (
             <div role='row' key={indx} className={`d-flex text-center py-1 rounded-2  `} >
-                <button className='btn p-0 px-2' onClick={() => onDeleteItem(indx)}><IconPark path={'ant-design:delete-twotone'} color={'#005EC3'}  /></button>
+                <button className='btn p-0 px-2' onClick={() => handleDeleteItem(indx, selectedItems, setSelectedItems)}><IconPark path={'ant-design:delete-twotone'} color={'#005EC3'}  /></button>
                 <span className='w-100 text-truncate d-flex align-items-end justify-content-center' role='cell' style={{fontSize: '11px'}}>
                     {data.item}
                 </span>
@@ -24,9 +24,9 @@ const TableBody = ({dataContents, height, onUpdateQuantity, onDeleteItem}) => {
                     {data.service}
                 </span>
                 <span className='w-100 text-truncate d-flex align-items-end justify-content-center' role='cell' style={{fontSize: '11px'}}>
-                    <button className='btn py-0 px-2 fw-bold' onClick={() => onUpdateQuantity(indx, data.qty - 1)}>-</button>
+                    <button className='btn py-0 px-2 fw-bold' onClick={() => handleUpdateQuantity(indx, data.qty - 1, setSelectedItems, selectedItems)}>-</button>
                     <span className='px-1'>{data.qty}</span>
-                    <button className='btn py-0 px-2 fw-bold' onClick={() => onUpdateQuantity(indx, data.qty + 1)}>+</button>
+                    <button className='btn py-0 px-2 fw-bold' onClick={() => handleUpdateQuantity(indx, data.qty + 1, setSelectedItems, selectedItems)}>+</button>
                 </span>
                 <span className='w-100 text-truncate d-flex align-items-end justify-content-center' role='cell' style={{fontSize: '11px'}}>
                     P {data.unit_price}

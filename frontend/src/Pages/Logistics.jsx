@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import { OverviewComponent, Table } from 'Components'
 import { logisticsData } from 'Utils/initialData'
-import {filteredLogisticData} from 'Utils/handlingFunctions'
+import {filteredTableData} from 'Utils/handlingFunctions'
 
 const Logistics = () => {
     const heading = [
@@ -66,7 +66,7 @@ const Logistics = () => {
                         <button className='button-itm py-2 px-3 rounded-3'>+ Activity</button>
                     </div>
                 </header>
-                <Table headers={headers} data={filteredLogisticData(logisticsData, selectedTab)} />
+                <Table headers={headers} data={filteredTableData(logisticsData, selectedTab)} />
             </section>
         </main>
     )

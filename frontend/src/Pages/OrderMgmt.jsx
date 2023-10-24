@@ -1,143 +1,16 @@
 import React, {useState} from 'react'
 import { AccordionTable, OverviewComponent2 } from 'Components'
+import {tableData} from 'Utils/initialData'
+import {filteredTableData} from 'Utils/handlingFunctions'
 
 const OrderMgmt = () => {
+    //initial data for overview components and table headers
     const headers = ['Daily Sales', 'Paid Order', 'Pending Payment', 'Credited']
     const content = ['P 2000', 'P 750', 'P 1000', 'P 250']
     const captions = ['80 Total of Orders', '30 Total of Orders Paid', '40 Total of Pending Payments', '10 Total of Credited Orders']
-    const [selectedTab, setSelectedTab] = useState('All');
-
     const tableHeader = ['Order ID', 'Date', 'Customer', 'Items', 'Total', 'Payment', 'Vendor', 'Delivery']
-    const tableData = [
-        {
-            id: '7946137845128951',
-            date: 'Oct 10, 2023',
-            customer: 'Raphael Isla',
-            items: 2,
-            Total: 50.00,
-            payment: 'Paid',
-            vendor: 'Kristine',
-            Delivery: 'Complete'
-        },
-        {
-            id: '7946137845128952',
-            date: 'Oct 10, 2023',
-            customer: 'Raphael Isla',
-            items: 2,
-            Total: 50.00,
-            payment: 'Credited',
-            vendor: 'Kristine',
-            Delivery: 'Complete'
-        },
-        {
-            id: '7946137845128953',
-            date: 'Oct 10, 2023',
-            customer: 'Raphael Isla',
-            items: 2,
-            Total: 50.00,
-            payment: 'Paid',
-            vendor: 'Kristine',
-            Delivery: 'Complete'
-        },
-        {
-            id: '7946137845128954',
-            date: 'Oct 10, 2023',
-            customer: 'Raphael Isla',
-            items: 2,
-            Total: 50.00,
-            payment: 'Paid',
-            vendor: 'Kristine',
-            Delivery: 'Complete'
-        },
-        {
-            id: '7946137845128955',
-            date: 'Oct 10, 2023',
-            customer: 'Raphael Isla',
-            items: 2,
-            Total: 50.00,
-            payment: 'Paid',
-            vendor: 'Kristine',
-            Delivery: 'Complete'
-        },
-        {
-            id: '7946137845128956',
-            date: 'Oct 10, 2023',
-            customer: 'Raphael Isla',
-            items: 2,
-            Total: 50.00,
-            payment: 'Paid',
-            vendor: 'Kristine',
-            Delivery: 'Complete'
-        },
-        {
-            id: '7946137845128957',
-            date: 'Oct 10, 2023',
-            customer: 'Raphael Isla',
-            items: 2,
-            Total: 50.00,
-            payment: 'Pending',
-            vendor: 'Kristine',
-            Delivery: 'Complete'
-        },
-        {
-            id: '7946137845128958',
-            date: 'Oct 10, 2023',
-            customer: 'Raphael Isla',
-            items: 2,
-            Total: 50.00,
-            payment: 'Credited',
-            vendor: 'Kristine',
-            Delivery: 'Complete'
-        },
-        {
-            id: '7946137845128959',
-            date: 'Oct 10, 2023',
-            customer: 'Raphael Isla',
-            items: 2,
-            Total: 50.00,
-            payment: 'Credited',
-            vendor: 'Kristine',
-            Delivery: 'Complete'
-        },
-        {
-            id: '7946137845128960',
-            date: 'Oct 10, 2023',
-            customer: 'Raphael Isla',
-            items: 2,
-            Total: 50.00,
-            payment: 'Credited',
-            vendor: 'Kristine',
-            Delivery: 'Complete'
-        },
-        {
-            id: '7946137845128961',
-            date: 'Oct 10, 2023',
-            customer: 'Raphael Isla',
-            items: 2,
-            Total: 50.00,
-            payment: 'Pending',
-            vendor: 'Kristine',
-            Delivery: 'Complete'
-        },
-        {
-            id: '7946137845128962',
-            date: 'Oct 10, 2023',
-            customer: 'Raphael Isla',
-            items: 2,
-            Total: 50.00,
-            payment: 'Pending',
-            vendor: 'Kristine',
-            Delivery: 'Complete'
-        }
-    ]
-
-    // Filter the data based on the selected tab
-    const filteredData = tableData.filter((data) => {
-        if (selectedTab === 'All') {
-            return true; // Show all data
-        }
-        return data.payment.toLowerCase() === selectedTab.toLowerCase();
-    });
+    
+    const [selectedTab, setSelectedTab] = useState('All'); // initial useState
 
     return (
         <main id='order' className='container-fluid h-100'>
@@ -166,7 +39,7 @@ const OrderMgmt = () => {
                         </li>
                     </ul>
                 </header>
-                <AccordionTable headers={tableHeader} rowColor={'un-select-two'} data={filteredData} height={'400px'}/>
+                <AccordionTable headers={tableHeader} rowColor={'un-select-two'} data={filteredTableData(tableData, selectedTab)} height={'400px'}/>
             </section>
         </main>
     )

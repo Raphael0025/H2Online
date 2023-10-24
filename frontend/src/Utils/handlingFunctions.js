@@ -3,7 +3,7 @@ export const filterData = (sampleData, searchQuery) => {
         content.date.toLowerCase().includes(searchQuery.toLowerCase())
     );
     return filteredContents;
-};
+}
 
 export const sortContents = (contents, order) => {
     const sortedContents = [...contents];
@@ -17,13 +17,13 @@ export const sortContents = (contents, order) => {
         sortedContents.sort((a, b) => new Date(a.createdAt) - new Date(b.createdAt));
     }
     return sortedContents;
-};
+}
 
 export const handleItemClick = (customerName, isSelected, data, onItemSelected) => {
     if (customerName && !isSelected) {
         onItemSelected(data);
     }
-};
+}
 
 export const handleActiveItem = (item, setItem) => {
     setItem(item)
@@ -62,12 +62,122 @@ export const getStockStatus = (stock, max) => {
     } else {
         return 'Full Stock';
     }
-};
-export const filteredLogisticData = (logisticsData, selectedTab) => {
-    return logisticsData.filter((data) => {
+}
+
+export const filteredTableData = (tableData, selectedTab) => {
+    return tableData.filter((data) => {
         if (selectedTab === 'All') {
             return true; // Show all data
         }
-        return data.progress.toLowerCase() === selectedTab.toLowerCase();
-    })
+        return data.payment.toLowerCase() === selectedTab.toLowerCase();
+    });
+}
+
+export const calculateTotalPrice = (selectedItems = [], discount) => {
+    const totalSubPrice = selectedItems.reduce((total, item) => total + item.sub_price, 0);
+    const discountAmount = (discount / 100) * totalSubPrice;
+    return (totalSubPrice - discountAmount).toFixed(2); // Apply the discount and format to two decimal places
+}
+
+export const calculateTotalSubPrice = (selectedItems = []) => {
+    const totalSubPrice = selectedItems.reduce((total, item) => total + item.sub_price, 0);
+    return totalSubPrice.toFixed(2); // Format the total sub-price to two decimal places
+}
+
+export const handleCustomerSelect = (customer, setCustomerName, sampleItems, setSelectedItems, setFilteredCustomers) => {
+    // Update the input fields (excluding customer name)
+    document.getElementById('delivery').value = customer.address;
+    setCustomerName(customer.name)
+
+    if (customer.gallon_Ownership) {
+        const newItems = customer.gallon_Ownership.map((gallon) => {
+            const item = sampleItems.find((sampleItem) => sampleItem.item === gallon.name);
+            if (item) {
+            return {
+                ...item,
+                qty: gallon.quantity,
+                sub_price: item.unit_price * gallon.quantity,
+            };
+            }
+            return null;
+        });
+        setSelectedItems(newItems.filter(Boolean));
+    }
+    // Clear the filtered customers and the input field
+    setFilteredCustomers([]);
+}
+
+export const handleDeleteItem = (itemIndex, selectedItems, setSelectedItems) => {
+    const updatedItems = selectedItems.filter((_, index) => index !== itemIndex);
+    setSelectedItems(updatedItems);
+}
+
+export const handleClearCustomer = (setCustomerName, setDiscount, setSelectedItems, setPaymentMethods, setShipping) => {
+    // Clear the input field
+    setCustomerName('')
+    document.getElementById('delivery').value = '';
+    setDiscount(0)
+    setSelectedItems([]); // Clear the selected items
+    setPaymentMethods('')
+    setShipping('')
+}
+
+export const handleInputChange = (e, setCustomerName, customers, setFilteredCustomers, setDiscount, setSelectedItems, setPaymentMethods, setShipping) => {
+    const value = e.target.value;
+    setCustomerName(value);
+
+    // Filter customers based on the input
+    const filtered = customers.filter((customer) =>
+        customer.name.toLowerCase().includes(value.toLowerCase())
+    );
+    setFilteredCustomers(filtered);
+
+    // Clear the filtered customers if the input is empty
+    if (!value) {
+        setDiscount(0);
+        setFilteredCustomers([]);
+        setSelectedItems([]);
+        handleClearCustomer(
+            setCustomerName,
+            setDiscount,
+            setSelectedItems,
+            setPaymentMethods,
+            setShipping
+        );
+
+        setPaymentMethods('');
+        setShipping('');
+        setCustomerName('');
+
+        // Check if the 'delivery' element exists before accessing its 'value' property
+        const deliveryInput = document.getElementById('delivery');
+        if (deliveryInput) {
+            deliveryInput.value = '';
+        }
+    }
+}
+
+export const handleDiscountChange = (e, setDiscount) => {
+    setDiscount(e.target.value);
+}
+
+export const handleItemSelected = (selectedItem, selectedItems, setSelectedItems) => {
+    // Check if the item is not already selected
+    if (!selectedItems.some((item) => item.item === selectedItem.item)) {
+        const selectedWithInitialQuantity = {
+            ...selectedItem,
+            qty: 1, // Set the initial quantity to 1
+            sub_price: selectedItem.unit_price, // Calculate the sub price
+        };
+        setSelectedItems([...selectedItems, selectedWithInitialQuantity]);
+    }
+}
+
+export const handleUpdateQuantity = (itemIndex, newQuantity, setSelectedItems, selectedItems) => {
+    if (newQuantity >= 0) {
+        const updatedItems = [...selectedItems];
+        updatedItems[itemIndex].qty = newQuantity;
+        updatedItems[itemIndex].sub_price = newQuantity * updatedItems[itemIndex].unit_price;
+        setSelectedItems(updatedItems);
+    }
 }
