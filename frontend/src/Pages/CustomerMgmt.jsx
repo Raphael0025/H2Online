@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback} from 'react'
-import { OverviewComponent, Table, TableLink } from 'Components'
+import { OverviewComponent, TableLink } from 'Components'
 import { sortContents } from 'Utils/handlingFunctions'
 import {sampleCustomers} from 'Utils/initialData'
 const CustomerMgmt = () => {
@@ -81,7 +81,7 @@ const CustomerMgmt = () => {
                     </div>
                 </header>
                 <div className='w-100 py-2' >
-                    <Table headers={headers} data={filteredContents} />
+                    <TableLink headers={headers} data={filteredContents} />
                 </div>
             </section>
         </main>

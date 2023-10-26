@@ -65,12 +65,16 @@
 }
 .table-row{
   background-color: var(--white);
+  color: var(--dark-blue);
   transition: all 0.3s ease;
 }
   .table-row:hover{
     background: var(--dark-blue);
     color: var(--white);
   }
+.unstyled{
+  text-decoration: none;
+}
 .un-select{
   background-color: #dbecff;
   transition: all 0.3s ease;

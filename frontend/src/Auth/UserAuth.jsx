@@ -33,7 +33,7 @@ const UserAuth = () => {
     
     const handleSubmit = () => {
         alert(formData.name === 'rapi' && formData.password === 'pepi')
-        navigate('/h2online/dashboard');
+        navigate('/dashboard');
     }
     return (
         <main className='h-100 d-flex justify-content-center align-items-center blob' style={{backgroundImage: `url(${blob})`, backgroundColor: '#C3E9FF'}}>

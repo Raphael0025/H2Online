@@ -11,8 +11,7 @@ const PageLink = () => {
                 <Route path='/dashboard' element={<Dashboard/>} />
                 <Route path='/customer-management' element={<CustomerMgmt/>} />
                 <Route path='/meter-reading' element={<WaterMeterReading/>} />
-                
-                <Route path='/customer-profile' element={<CustomerProfile/>} />
+                <Route path='/customer-profile/:id' element={<CustomerProfile/>} />
                 <Route path='/inventory' element={<Inventory/>} />
                 <Route path='/booking' element={<LogisticsBooking/>} />
                 <Route path='/logistic' element={<Logistics/>} />

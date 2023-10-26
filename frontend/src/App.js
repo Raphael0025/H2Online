@@ -8,7 +8,7 @@ function App() {
       <div className="App w-auto">
         <Routes>
           <Route path='/' element={<UserAuth />} />
-          <Route path='/h2online/*' element={<PageLink />} />
+          <Route path='/*' element={<PageLink />} />
         </Routes>
       </div>
     </BrowserRouter>

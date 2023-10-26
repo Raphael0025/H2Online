@@ -1,5 +1,5 @@
-import React from 'react'
-
+import React, {useState} from 'react'
+import { Link } from 'react-router-dom'
 const TableLink = ({data, headers, height='420px'}) => {
     
     return ( 
@@ -11,17 +11,20 @@ const TableLink = ({data, headers, height='420px'}) => {
 }
 
 const TableBody = ({dataContents, height}) => {
+    const [selectedRow, setSelectedRow] = useState(null);
 
     return(
         <div className='d-flex flex-column w-100 gap-2 table-container-two' role='rowgroup' style={{height: height}}>
         {dataContents.map((data) => (
-            <div role='row' key={data.id} className='table-row d-flex text-center py-2 rounded-3'>
-            {Object.values(data).map((value, index) => (
-                <span className='w-100 text-truncate ' style={{fontSize: '12px'}} role='cell' key={index}>
-                    {value}
-                </span>
-            ))}
-            </div>
+            <Link to={`/customer-profile/${data.id}`} state={{ customerData: data }} key={data.id} className='table-row unstyled rounded-3'>
+                <div role='row' className={`table-row d-flex text-center py-2 rounded-3 ${selectedRow === data ? 'selected' : ''}`} onClick={() => setSelectedRow(data)} >
+                {Object.values(data).map((value, index) => (
+                    <span className='w-100 text-truncate' style={{fontSize: '12px'}} role='cell' key={index}>
+                        {value}
+                    </span>
+                ))}
+                </div>
+            </Link>
         ))}
         </div>
     )
