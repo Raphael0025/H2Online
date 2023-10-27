@@ -390,6 +390,143 @@ export const sampleCustomers = [
     },
 ]
 
+export const customers = [
+    {
+        "name": "Mrs. Weston White",
+        "contact": "(457) 482-5223 x756",
+        "address": "West North Alvisland, Robb Neck, 353",
+        "gallon_Ownership": [
+          {
+            "name": "Square Gallon",
+            "quantity": 5
+          },
+          {
+            "name": "Round Gallon",
+            "quantity": 3
+          },
+          {
+            "name": "10 Liters",
+            "quantity": 2
+          }
+        ]
+    },
+    {
+        "name": "Kristofer Barton",
+        "contact": "1-172-007-2924",
+        "address": "New North Karimouth, Dooley Place, 959",
+        "gallon_Ownership": [
+          {
+            "name": "Square Gallon",
+            "quantity": 2
+          },
+          {
+            "name": "Round Gallon",
+            "quantity": 1
+          },
+          {
+            "name": "8 Liters",
+            "quantity": 4
+          }
+        ]
+      },
+    {
+      "name": "Giovanni Zieme",
+      "contact": "660.793.2980 x3360",
+      "address": "South East Chad, Schamberger Drive, 70207"
+    },
+    {
+      "name": "Neoma Runolfsdottir",
+      "contact": "019-533-7965",
+      "address": "East Conradchester, West Route, 33573"
+    },
+    {
+      "name": "Hollis Keeling",
+      "contact": "(418) 931-1301",
+      "address": "Lake Jazminshire, Kutch Stravenue, 12861"
+    },
+    {
+      "name": "Marta Hagenes",
+      "contact": "1-354-772-2174 x5114",
+      "address": "East Lloydview, O'Kon Gateway, 53112"
+    },
+    {
+      "name": "Jude Schneider III",
+      "contact": "926-752-6635",
+      "address": "South South Allieland, Williamson Circle, 41376"
+    },
+    {
+      "name": "Mrs. Kianna Morar",
+      "contact": "(739) 786-1806 x420",
+      "address": "West Dalemouth, Kris Fields, 50847"
+    },
+    {
+      "name": "Lon Stokes",
+      "contact": "1-014-464-5081 x698",
+      "address": "Port Lake Mabel, Angela Park, 87389"
+    },
+    {
+      "name": "Jarret Littel",
+      "contact": "(053) 153-8929 x3174",
+      "address": "Lake North Deshaun, Camren Hills, 55861"
+    },
+    {
+      "name": "Christy Jaskolski",
+      "contact": "287.819.7179",
+      "address": "West Wintheiserburgh, Wyman Underpass, 41975"
+    },
+    {
+      "name": "Tito Nicolas",
+      "contact": "(705) 551-7361 x88009",
+      "address": "New Hoegerfort, Erica Tunnel, 72776"
+    },
+    {
+      "name": "Jason Abernathy",
+      "contact": "701-960-2550",
+      "address": "New Chaddton, Nicole Walk, 28771"
+    },
+    {
+      "name": "Oda Price",
+      "contact": "075-360-7730 x263",
+      "address": "West Roobhaven, Pfannerstill Mill, 95665"
+    },
+    {
+      "name": "Jovani Beatty",
+      "contact": "(661) 725-4464 x9183",
+      "address": "Lake Port Genesisside, Harber Centers, 45079"
+    },
+    {
+      "name": "Betty Gottlieb",
+      "contact": "(727) 730-5700 x4634",
+      "address": "East Hermistonville, Newton Track, 75279"
+    },
+    {
+      "name": "Aletha Walter",
+      "contact": "369.388.3994",
+      "address": "East Cronaton, Reilly Glen, 53375"
+    },
+    {
+      "name": "Ruthie VonRueden V",
+      "contact": "1-536-793-6292 x6177",
+      "address": "North Letitiaside, Welch Summit, 36526"
+    },
+    {
+      "name": "Joyce Breitenberg",
+      "contact": "1-175-562-7295 x082",
+      "address": "West Bauchbury, Sibyl Field, 64626"
+    },
+    {
+      "name": "Lane Gusikowski",
+      "contact": "726-289-2245 x79267",
+      "address": "East Astridburgh, Swaniawski Plains, 86633"
+    }
+]
+
+export const orderHistory = [
+    {
+
+    }
+]
+
 export const users = [
         {
           id: 1,
@@ -1069,137 +1206,6 @@ export const expensesData = [
         qty: 3,
         unit_price: 20,
         total: 60.00
-    }
-]
-
-export const customers = [
-    {
-        "name": "Mrs. Weston White",
-        "contact": "(457) 482-5223 x756",
-        "address": "West North Alvisland, Robb Neck, 353",
-        "gallon_Ownership": [
-          {
-            "name": "Square Gallon",
-            "quantity": 5
-          },
-          {
-            "name": "Round Gallon",
-            "quantity": 3
-          },
-          {
-            "name": "10 Liters",
-            "quantity": 2
-          }
-        ]
-    },
-    {
-        "name": "Kristofer Barton",
-        "contact": "1-172-007-2924",
-        "address": "New North Karimouth, Dooley Place, 959",
-        "gallon_Ownership": [
-          {
-            "name": "Square Gallon",
-            "quantity": 2
-          },
-          {
-            "name": "Round Gallon",
-            "quantity": 1
-          },
-          {
-            "name": "8 Liters",
-            "quantity": 4
-          }
-        ]
-      },
-    {
-      "name": "Giovanni Zieme",
-      "contact": "660.793.2980 x3360",
-      "address": "South East Chad, Schamberger Drive, 70207"
-    },
-    {
-      "name": "Neoma Runolfsdottir",
-      "contact": "019-533-7965",
-      "address": "East Conradchester, West Route, 33573"
-    },
-    {
-      "name": "Hollis Keeling",
-      "contact": "(418) 931-1301",
-      "address": "Lake Jazminshire, Kutch Stravenue, 12861"
-    },
-    {
-      "name": "Marta Hagenes",
-      "contact": "1-354-772-2174 x5114",
-      "address": "East Lloydview, O'Kon Gateway, 53112"
-    },
-    {
-      "name": "Jude Schneider III",
-      "contact": "926-752-6635",
-      "address": "South South Allieland, Williamson Circle, 41376"
-    },
-    {
-      "name": "Mrs. Kianna Morar",
-      "contact": "(739) 786-1806 x420",
-      "address": "West Dalemouth, Kris Fields, 50847"
-    },
-    {
-      "name": "Lon Stokes",
-      "contact": "1-014-464-5081 x698",
-      "address": "Port Lake Mabel, Angela Park, 87389"
-    },
-    {
-      "name": "Jarret Littel",
-      "contact": "(053) 153-8929 x3174",
-      "address": "Lake North Deshaun, Camren Hills, 55861"
-    },
-    {
-      "name": "Christy Jaskolski",
-      "contact": "287.819.7179",
-      "address": "West Wintheiserburgh, Wyman Underpass, 41975"
-    },
-    {
-      "name": "Tito Nicolas",
-      "contact": "(705) 551-7361 x88009",
-      "address": "New Hoegerfort, Erica Tunnel, 72776"
-    },
-    {
-      "name": "Jason Abernathy",
-      "contact": "701-960-2550",
-      "address": "New Chaddton, Nicole Walk, 28771"
-    },
-    {
-      "name": "Oda Price",
-      "contact": "075-360-7730 x263",
-      "address": "West Roobhaven, Pfannerstill Mill, 95665"
-    },
-    {
-      "name": "Jovani Beatty",
-      "contact": "(661) 725-4464 x9183",
-      "address": "Lake Port Genesisside, Harber Centers, 45079"
-    },
-    {
-      "name": "Betty Gottlieb",
-      "contact": "(727) 730-5700 x4634",
-      "address": "East Hermistonville, Newton Track, 75279"
-    },
-    {
-      "name": "Aletha Walter",
-      "contact": "369.388.3994",
-      "address": "East Cronaton, Reilly Glen, 53375"
-    },
-    {
-      "name": "Ruthie VonRueden V",
-      "contact": "1-536-793-6292 x6177",
-      "address": "North Letitiaside, Welch Summit, 36526"
-    },
-    {
-      "name": "Joyce Breitenberg",
-      "contact": "1-175-562-7295 x082",
-      "address": "West Bauchbury, Sibyl Field, 64626"
-    },
-    {
-      "name": "Lane Gusikowski",
-      "contact": "726-289-2245 x79267",
-      "address": "East Astridburgh, Swaniawski Plains, 86633"
     }
 ]
 

@@ -41,45 +41,52 @@ const CustomerProfile = () => {
         updateFilteredContents() // Update finalContents whenever the sortOrder changes
     }, [updateFilteredContents])
 
-
     return (
-        <main id='customerprofile' className='container-fluid'>
-            <div className='px-3 pt-3'>
-                <h2 className='border-bottom py-2 border-dark-subtle page-header'>Order History</h2>
-            </div>
-            <section className='container-fluid px-3 py-3 d-flex' style={{gap: '20px'}}>
-            {header.map((data, indx) => (
-                <OverviewComponent heading={data} content={content[indx]} key={indx} width={'250px'} />
-            ))}
-            </section>
-            <div>
-                <p>ID: {customerData.id}</p>
-                <p>Name: {customerData.name}</p>
-                <p>Phone: {customerData.phone}</p>
-                <p>Address: {customerData.address}</p>
-                {/* Add more details as needed */}
-            </div>
-
-            <section className='container-fluid px-3 pb-3'>
-                <header className='d-flex justify-content-between align-items-end'>
-                    <ul className='nav gap-2'>
-                        <li className='nav-item'>
-                            <button className={`nav-link itm `} onClick={() => setSelectedTab('All')}>All</button>
-                        </li>
-                        <li className='nav-item'>
-                            <button className={`nav-link itm `} onClick={() => setSelectedTab('Credits')}>Credits</button>
-                        </li>
-                        <li className='nav-item'>
-                            <button className={`nav-link itm `} onClick={() => setSelectedTab('Paid Credits')}>Paid Credits</button>
-                        </li>
-                        <li className='nav-item px-3'>
-                            <button className='button-itm py-2 px-3 rounded-3'>+ Reduce Credits</button>
-                        </li>
-                    </ul>
-                </header>
-                <div className='w-100 py-2' >
-                    <AccordionTable rowColor={'white'} headers={headers} data={filteredContents} />
+        <main id='customerprofile' className='container-fluid d-flex h-100'>
+            <section className='container-fluid pe-0'>
+                <div className='px-3 pt-3'>
+                    <h2 className='border-bottom py-2 border-dark-subtle page-header'>Order History</h2>
                 </div>
+                <section className='container-fluid px-3 py-3 d-flex' style={{gap: '20px'}}>
+                    {header.map((data, indx) => (
+                        <OverviewComponent heading={data} content={content[indx]} key={indx} width={'250px'} />
+                    ))}
+                </section>
+                <section className='container-fluid px-3 pb-3'>
+                    <header className='d-flex justify-content-between align-items-end'>
+                        <ul className='nav gap-2'>
+                            <li className='nav-item'>
+                                <button className={`nav-link itm `} onClick={() => setSelectedTab('All')}>All</button>
+                            </li>
+                            <li className='nav-item'>
+                                <button className={`nav-link itm `} onClick={() => setSelectedTab('Credits')}>Credits</button>
+                            </li>
+                            <li className='nav-item'>
+                                <button className={`nav-link itm `} onClick={() => setSelectedTab('Paid Credits')}>Paid Credits</button>
+                            </li>
+                            <li className='nav-item px-3'>
+                                <button className='button-itm py-2 px-3 rounded-3'>+ Reduce Credits</button>
+                            </li>
+                        </ul>
+                    </header>
+                    <div className='w-100 py-2' >
+                        <AccordionTable rowColor={'white'} headers={headers} data={filteredContents} />
+                    </div>
+                </section>
+            </section>
+            <section className='p-3 ps-0' style={{width: '350px'}}>
+                <section className='p-2 h-100 bg-light rounded-2'>
+                    <span>Created on: </span>
+                    <p>Name: {customerData.name}</p>    
+                    <hr />
+                    <p className='rounded-5 bg-info p-2' style={{fontSize: '12px'}}>Phone: {customerData.phone}</p>
+                    <p className='rounded-5 bg-info p-2' style={{fontSize: '12px'}}>Address: {customerData.address}</p>
+                    <div className='p-2'>
+                        <span>Gallons Owned</span>
+
+                    </div>
+                    <button className='btn btn-danger rounded-5 w-100 '>Delete Account</button>
+                </section>
             </section>
         </main>
     );
