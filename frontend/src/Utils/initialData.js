@@ -204,6 +204,7 @@ export const sampleCustomers = [
         phone: '09269603768',
         address: '558 M De Jesus St.',
         credit: 0,
+        paymentStatus: 'Paid',
         createdAt: 'Oct 6, 2023',
         coins: 825
     },
@@ -213,6 +214,7 @@ export const sampleCustomers = [
         phone: '09269603768',
         address: '558 M De Jesus St.',
         credit: 5070,
+        paymentStatus: 'Credits',
         createdAt: 'Sept 6, 2023',
         coins: 275
     },
@@ -222,6 +224,7 @@ export const sampleCustomers = [
         phone: '09269603768',
         address: '558 M De Jesus St.',
         credit: 5060,
+        paymentStatus: 'Credits',
         createdAt: 'Aug 6, 2023',
         coins: 265
     },
@@ -231,6 +234,7 @@ export const sampleCustomers = [
         phone: '09269603768',
         address: '558 M De Jesus St.',
         credit: 5005,
+        paymentStatus: 'Credits',
         createdAt: 'Jan 6, 2023',
         coins: 525
     },
@@ -240,6 +244,7 @@ export const sampleCustomers = [
         phone: '09269603768',
         address: '558 M De Jesus St.',
         credit: 1500,
+        paymentStatus: 'Credits',
         createdAt: 'Mar 6, 2023',
         coins: 245
     },
@@ -249,6 +254,7 @@ export const sampleCustomers = [
         phone: '09269603768',
         address: '558 M De Jesus St.',
         credit: 2500,
+        paymentStatus: 'Credits',
         createdAt: 'May 6, 2023',
         coins: 225
     },
@@ -258,6 +264,7 @@ export const sampleCustomers = [
         phone: '09269603768',
         address: '558 M De Jesus St.',
         credit: 1500,
+        paymentStatus: 'Credits',
         createdAt: 'Jul 6, 2023',
         coins: 245
     },
@@ -267,6 +274,7 @@ export const sampleCustomers = [
         phone: '09269603768',
         address: '558 M De Jesus St.',
         credit: 500,
+        paymentStatus: 'Credits',
         createdAt: 'Feb 6, 2023',
         coins: 235
     },
@@ -276,6 +284,7 @@ export const sampleCustomers = [
         phone: '09269603768',
         address: '558 M De Jesus St.',
         credit: 5100,
+        paymentStatus: 'Credits',
         createdAt: 'Apr 6, 2023',
         coins: 225
     },
@@ -285,6 +294,7 @@ export const sampleCustomers = [
         phone: '09269603768',
         address: '558 M De Jesus St.',
         credit: 5200,
+        paymentStatus: 'Credits',
         createdAt: 'Jan 6, 2023',
         coins: 215
     },
@@ -294,6 +304,7 @@ export const sampleCustomers = [
         phone: '09269603768',
         address: '558 M De Jesus St.',
         credit: 0,
+        paymentStatus: 'Paid',
         createdAt: 'june 6, 2023',
         coins: 25
     },
@@ -303,6 +314,7 @@ export const sampleCustomers = [
         phone: '09269603768',
         address: '558 M De Jesus St.',
         credit: 500,
+        paymentStatus: 'Credits',
         createdAt: 'june 6, 2023',
         coins: 25
     },
@@ -312,6 +324,7 @@ export const sampleCustomers = [
         phone: '09269603768',
         address: '558 M De Jesus St.',
         credit: 500,
+        paymentStatus: 'Credits',
         createdAt: 'june 6, 2023',
         coins: 25
     },
@@ -321,6 +334,7 @@ export const sampleCustomers = [
         phone: '09269603768',
         address: '558 M De Jesus St.',
         credit: 500,
+        paymentStatus: 'Credits',
         createdAt: 'june 6, 2023',
         coins: 25
     },
@@ -330,6 +344,7 @@ export const sampleCustomers = [
         phone: '09269603768',
         address: '558 M De Jesus St.',
         credit: 0,
+        paymentStatus: 'Paid',
         createdAt: 'june 6, 2023',
         coins: 25
     },
@@ -339,6 +354,7 @@ export const sampleCustomers = [
         phone: '09269603768',
         address: '558 M De Jesus St.',
         credit: 0,
+        paymentStatus: 'Paid',
         createdAt: 'june 6, 2023',
         coins: 25
     },
@@ -348,6 +364,7 @@ export const sampleCustomers = [
         phone: '09269603768',
         address: '558 M De Jesus St.',
         credit: 0,
+        paymentStatus: 'Paid',
         createdAt: 'june 6, 2023',
         coins: 25
     },
@@ -357,6 +374,7 @@ export const sampleCustomers = [
         phone: '09269603768',
         address: '558 M De Jesus St.',
         credit: 0,
+        paymentStatus: 'Paid',
         createdAt: 'june 6, 2023',
         coins: 25
     },
@@ -366,6 +384,7 @@ export const sampleCustomers = [
         phone: '09269603768',
         address: '558 M De Jesus St.',
         credit: 0,
+        paymentStatus: 'Paid',
         createdAt: 'june 6, 2023',
         coins: 25
     },
