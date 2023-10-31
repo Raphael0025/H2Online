@@ -2,6 +2,8 @@ import React, {useState, useEffect, useCallback} from 'react'
 import { useLocation } from 'react-router-dom';
 import { OverviewComponent, AccordionTable } from 'Components';
 import {sampleCustomers} from 'Utils/initialData'
+import Avatar from 'react-avatar'
+import av from '../Assets/images/avatar.jpg'
 
 const CustomerProfile = () => {
     const content = [500, 50]
@@ -41,6 +43,7 @@ const CustomerProfile = () => {
         updateFilteredContents() // Update finalContents whenever the sortOrder changes
     }, [updateFilteredContents])
 
+    const urlImg = '';
     return (
         <main id='customerprofile' className='container-fluid d-flex h-100'>
             <section className='container-fluid pe-0'>
@@ -75,17 +78,30 @@ const CustomerProfile = () => {
                 </section>
             </section>
             <section className='p-3 ps-0' style={{width: '350px'}}>
-                <section className='p-2 h-100 bg-light rounded-2'>
-                    <span>Created on: </span>
-                    <p>Name: {customerData.name}</p>    
-                    <hr />
-                    <p className='rounded-5 bg-info p-2' style={{fontSize: '12px'}}>Phone: {customerData.phone}</p>
-                    <p className='rounded-5 bg-info p-2' style={{fontSize: '12px'}}>Address: {customerData.address}</p>
-                    <div className='p-2'>
-                        <span>Gallons Owned</span>
+                <section className='p-2 d-flex justify-content-between flex-column px-3 h-100 bg-light rounded-2'>
+                    <div>
+                        <span style={{fontSize: '12px'}}>Created on: {customerData.createdAt}</span>
+                        <div className='text-center py-2'>
+                            <Avatar src={urlImg || null} name={customerData.name} round={true} color='#003E81' fgColor='#fff' size={100} textSizeRatio={2} />
+                        </div>
+                        <p className='fw-bold mb-2 text-center'>{customerData.name}</p>    
+                        <hr className='mt-2' />
+                        <p className='my-2 rounded-5 bg-info p-2 d-flex justify-content-between px-3' style={{fontSize: '12px'}}>Phone: <span>{customerData.phone}</span></p>
+                        <p className='my-2 rounded-5 bg-info p-2 d-flex justify-content-between px-3' style={{fontSize: '12px'}}>Address: <span>{customerData.address}</span></p>
 
+                        <p className='my-2 rounded-5 bg-info p-2 d-flex justify-content-between px-3' style={{fontSize: '12px'}}>Gender: <span>{customerData.phone}</span></p>
+                        <p className='my-2 rounded-5 bg-info p-2 d-flex justify-content-between px-3' style={{fontSize: '12px'}}>Email: <span>{customerData.address}</span></p>
+                        <p className='my-2 rounded-5 bg-info p-2 d-flex justify-content-between px-3' style={{fontSize: '12px'}}>Password: <span>{customerData.address}</span></p>
+                        <div className='p-2'> 
+                            <p style={{fontSize: '12px'}}>Gallons Owned</p>
+                            <div className='bg-info p-1'>
+
+                            </div>
+                        </div>
                     </div>
-                    <button className='btn btn-danger rounded-5 w-100 '>Delete Account</button>
+                    <div>
+                        <button className='btn btn-danger rounded-5 w-100' style={{fontSize: '12px'}}>Delete Account</button>
+                    </div>
                 </section>
             </section>
         </main>
