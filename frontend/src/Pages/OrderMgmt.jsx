@@ -11,7 +11,8 @@ const OrderMgmt = () => {
     const tableHeader = ['Order ID', 'Date', 'Customer', 'Items', 'Total', 'Payment', 'Vendor', 'Delivery']
     
     const [selectedTab, setSelectedTab] = useState('All'); // initial useState
-
+    const accessorFunctionForPayment = (data) => data.payment;
+    
     return (
         <main id='order' className='container-fluid h-100'>
             <div className='px-3 pt-3'>
@@ -38,8 +39,8 @@ const OrderMgmt = () => {
                             <button className={`nav-link itm `} onClick={() => setSelectedTab('Paid')}>Completed</button>
                         </li>
                     </ul>
-                </header>
-                <AccordionTable headers={tableHeader} rowColor={'un-select-two'} data={filteredTableData(tableData, selectedTab)} height={'400px'}/>
+                </header> 
+                <AccordionTable headers={tableHeader} rowColor={'un-select-two'} data={filteredTableData( tableData, selectedTab, accessorFunctionForPayment)} height={'400px'}/>
             </section>
         </main>
     )

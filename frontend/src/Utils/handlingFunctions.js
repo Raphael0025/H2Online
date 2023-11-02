@@ -64,14 +64,16 @@ export const getStockStatus = (stock, max) => {
     }
 }
 
-export const filteredTableData = (tableData, selectedTab) => {
+export const filteredTableData = (tableData, selectedTab, accessorFunction) => {
     return tableData.filter((data) => {
         if (selectedTab === 'All') {
             return true; // Show all data
         }
-        return data.payment.toLowerCase() === selectedTab.toLowerCase();
+        const fieldValue = accessorFunction(data);
+        return fieldValue.toLowerCase() === selectedTab.toLowerCase();
     });
 }
+
 
 export const calculateTotalPrice = (selectedItems = [], discount) => {
     const totalSubPrice = selectedItems.reduce((total, item) => total + item.sub_price, 0);

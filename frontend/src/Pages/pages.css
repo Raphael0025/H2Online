@@ -60,3 +60,14 @@ main{
 .customer-dropdown .dropdown-item:hover {
     background: #f1f1f1;
 }
+.user-date, .user-info{
+    color: var(--gray);
+    font-size: 10px;
+    font-weight: 700;
+}
+.user-info{
+    background-color: #DBEEF8;
+}
+.user-details{
+    color: var(--blue);
+}

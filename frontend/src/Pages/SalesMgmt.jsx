@@ -31,6 +31,7 @@ const SalesMgmt = () => {
     const expensesHeaders = ['Date', 'Item', 'Quantity', 'Unit Price', 'Amount']
 
     const [selectedTab, setSelectedTab] = useState('All');
+    const accessorFunctionForPayment = (data) => data.payment;
 
     return (
         <main id='sales' className='container-fluid'>
@@ -61,7 +62,7 @@ const SalesMgmt = () => {
                         </li>
                     </ul>
                 </header>
-                <AccordionTable headers={tableHeader} rowColor={'un-select-two'} data={filteredTableData(salesTableData, selectedTab)} height={'300px'} />
+                <AccordionTable headers={tableHeader} rowColor={'un-select-two'} data={filteredTableData( salesTableData, selectedTab, accessorFunctionForPayment)} height={'300px'} />
             </section>
             <section className='container-fluid p-3 d-flex gap-3'>
                 <div className='bg-light flex-fill p-3 rounded-3'>

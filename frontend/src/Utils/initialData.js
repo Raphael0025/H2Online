@@ -524,7 +524,7 @@ export const customers = [
 export const orderHistory = [
     {
 
-    }
+    } 
 ]
 
 export const users = [

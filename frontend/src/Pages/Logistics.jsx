@@ -29,7 +29,8 @@ const Logistics = () => {
     const headers = ['Delivery ID', 'Order ID', 'Customer', 'Phone', 'Address', 'Courier', 'Progress', 'Delivered At']
     const content = [35, 6, 12, 5, 25]
     const [selectedTab, setSelectedTab] = useState('All');
-
+    const accessorFunctionForProgress = (data) => data.progress;
+    
     return (
         <main id='logistic' className='container-fluid h-100'>
             <div className='px-3 pt-3'>
@@ -65,8 +66,8 @@ const Logistics = () => {
                     <div className='d-flex gap-2 align-items-end'>
                         <button className='button-itm py-2 px-3 rounded-3'>+ Activity</button>
                     </div>
-                </header>
-                <Table headers={headers} data={filteredTableData(logisticsData, selectedTab)} />
+                </header> 
+                <Table headers={headers} data={filteredTableData(logisticsData, selectedTab, accessorFunctionForProgress)} />
             </section>
         </main>
     )

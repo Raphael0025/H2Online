@@ -31,13 +31,21 @@ const TableBody = ({dataContents, height, rowColor}) => {
                     </button>
                 </h4>
                 <div id={`collapse${data.id}`} className='accordion-collapse collapse' data-bs-parent='#tableAccordion'>
-                    <div className='accordion-body'>
-                        hello
-                        <div>
-                            World
-                            <div>
-                                hello
+                    <div className='accordion-body d-flex gap-3' style={{fontSize: '10px'}}>
+                        <div className='w-100'>
+                            <div className='d-flex gap-2 align-items-center fs-6'>
+                                <p className='fw-bolder m-0'>Items</p>
+                                <hr className='w-100 my-3' />
                             </div>
+                            <div className='d-flex justify-content-between align-items-center text-secondary' >
+                                <span>Item</span>
+                                <span>Quantity</span>
+                                <span>Unit Price</span>
+                                <span>Sub Total</span>
+                            </div>
+                        </div>
+                        <div className='w-100 p-2 bg-secondary'>
+
                         </div>
                     </div>
                 </div>
