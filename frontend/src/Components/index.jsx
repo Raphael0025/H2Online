@@ -12,7 +12,8 @@ import OverviewComponent2 from './OverView/OverviewComponent2'
 import MultiSelectionTable from './Table/MultiSelectionTable'
 import Receipt from './Receipt'
 import POSItem from './POSItem'
+import SubDetails from './SubDetails'
 
 import './components.css'
 
-export { Navigation, Receipt, POSItem, ItemCard, OverviewComponent, MultiSelectionTable, OverviewComponent2, AccordionTable2, TableLink, BookingItem, DoughnutChart, LineChart, AccordionTable, Table } 
+export { Navigation, Receipt, SubDetails, POSItem, ItemCard, OverviewComponent, MultiSelectionTable, OverviewComponent2, AccordionTable2, TableLink, BookingItem, DoughnutChart, LineChart, AccordionTable, Table } 
