@@ -18,11 +18,14 @@ const TableBody = ({dataContents, height}) => {
         {dataContents.map((data) => (
             <Link to={`/customer-profile/${data.id}`} state={{ customerData: data }} key={data.id} className='table-row unstyled rounded-3'>
                 <div role='row' className={`table-row d-flex text-center py-2 rounded-3 ${selectedRow === data ? 'selected' : ''}`} onClick={() => setSelectedRow(data)} >
-                {Object.values(data).map((value, index) => (
-                    <span className='w-100 text-truncate' style={{fontSize: '12px'}} role='cell' key={index}>
-                        {value}
-                    </span>
-                ))}
+                    <span className='w-100 text-truncate' style={{fontSize: '12px'}} role='cell' > {data.id} </span>
+
+                    <span className='w-100 text-truncate' style={{fontSize: '12px'}} role='cell' > {data.name} </span>
+                    <span className='w-100 text-truncate' style={{fontSize: '12px'}} role='cell' > {data.phone} </span>
+                    <span className='w-100 text-truncate' style={{fontSize: '12px'}} role='cell' > {data.address} </span>
+                    <span className='w-100 text-truncate' style={{fontSize: '12px'}} role='cell' > {data.credit} </span>
+                    <span className='w-100 text-truncate' style={{fontSize: '12px'}} role='cell' > {data.createdAt} </span>
+                    <span className='w-100 text-truncate' style={{fontSize: '12px'}} role='cell' > {data.coins} </span>
                 </div>
             </Link>
         ))}

@@ -1,6 +1,6 @@
 import React from 'react'
 import { OverviewComponent, DoughnutChart, LineChart, AccordionTable } from 'Components'
-import {users, doughnutData} from 'Utils/initialData'
+import {orderHistory, doughnutData} from 'Utils/initialData'
 const Dashboard = () => {
     const overviewHeaders = [
         {
@@ -37,7 +37,7 @@ const Dashboard = () => {
         }
     ]
     const contents = [ 'P 4,020', 'P 3,200', 500, 'P 100', 50, 50, 13, 4]
-    const tableHeaders = ['Invoice ID', 'Date', 'Customer', 'Items', 'Total', 'Service', 'Payment', 'Vendor', 'Delivery']
+    const tableHeaders = ['Invoice ID', 'Date', 'Total', 'Items', 'Vendor', 'Payment', 'Delivery']
 
     return (
         <main id='dash' className='container-fluid '>
@@ -59,7 +59,7 @@ const Dashboard = () => {
             <section className='px-3 py-3 w-100'>
                 <div className='statistic rounded-3 p-3'>
                     <h4 className='header'>Recent Invoices</h4>
-                    <AccordionTable data={users} headers={tableHeaders} />
+                    <AccordionTable data={orderHistory} headers={tableHeaders} />
                 </div>
             </section>
         </main>

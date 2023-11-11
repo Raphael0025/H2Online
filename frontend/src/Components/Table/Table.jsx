@@ -15,8 +15,8 @@ const TableBody = ({dataContents, height, selectedRow, onRowClick }) => {
 
     return(
         <div className='d-flex flex-column w-100 gap-2 table-container-two' role='rowgroup' style={{height: height}}>
-        {dataContents.map((data) => (
-            <div role='row' key={data.id} className={`table-row d-flex text-center py-2 rounded-3  ${selectedRow === data ? 'selected' : ''}`} onClick={() => onRowClick(data)}>
+        {dataContents.map((data, indx) => (
+            <div role='row' key={indx} className={`table-row d-flex text-center py-2 rounded-3  ${selectedRow === data ? 'selected' : ''}`} onClick={() => onRowClick(data)}>
             {Object.values(data).map((value, index) => (
                 <span className='w-100 text-truncate ' style={{fontSize: '12px'}} role='cell' key={index}>
                     {value}

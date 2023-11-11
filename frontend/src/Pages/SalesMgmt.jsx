@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import { OverviewComponent, AccordionTable, Table } from 'Components'
-import { salesTableData, productsSoldData, expensesData } from 'Utils/initialData'
+import { orderHistory, productsSoldData, expensesData } from 'Utils/initialData'
 import { filteredTableData } from 'Utils/handlingFunctions'
 const SalesMgmt = () => {
     const headers = [
@@ -26,12 +26,12 @@ const SalesMgmt = () => {
         }
     ]
     const contents = ['P 2000', 'P 750', 'P 1000', 'P 1500', 'P 1200']
-    const tableHeader = ['Order ID', 'Date', 'Customer', 'Items', 'Total', 'Service', 'Payment', 'Vendor', 'Delivery']
+    const tableHeader = ['Order ID', 'Date', 'Total', 'Items', 'Vendor', 'Payment', 'Delivery']
     const productsSoldHeaders = ['Product', 'Price', 'Sold(pcs)', 'Interactions']
     const expensesHeaders = ['Date', 'Item', 'Quantity', 'Unit Price', 'Amount']
 
     const [selectedTab, setSelectedTab] = useState('All');
-    const accessorFunctionForPayment = (data) => data.payment;
+    const accessorFunctionForPayment = (data) => data.payment.status;
 
     return (
         <main id='sales' className='container-fluid'>
@@ -62,7 +62,7 @@ const SalesMgmt = () => {
                         </li>
                     </ul>
                 </header>
-                <AccordionTable headers={tableHeader} rowColor={'un-select-two'} data={filteredTableData( salesTableData, selectedTab, accessorFunctionForPayment)} height={'300px'} />
+                <AccordionTable headers={tableHeader} rowColor={'un-select-two'} data={filteredTableData( orderHistory, selectedTab, accessorFunctionForPayment)} height={'300px'} />
             </section>
             <section className='container-fluid p-3 d-flex gap-3'>
                 <div className='bg-light flex-fill p-3 rounded-3'>

@@ -199,66 +199,6 @@ export const sampleMeterData = [
 
 export const sampleCustomers = [
     {
-        id: '2223335674890673',
-        name: 'Raphael Isla',
-        phone: '09269603768',
-        address: '558 M De Jesus St.',
-        credit: 0,
-        paymentStatus: 'Paid',
-        createdAt: 'Oct 6, 2023',
-        coins: 825
-    },
-    {
-        id: '1113335674890673',
-        name: 'Joshua Isla',
-        phone: '09269603768',
-        address: '558 M De Jesus St.',
-        credit: 5070,
-        paymentStatus: 'Credits',
-        createdAt: 'Sept 6, 2023',
-        coins: 275
-    },
-    {
-        id: '1223335674890673',
-        name: 'Micheal Isla',
-        phone: '09269603768',
-        address: '558 M De Jesus St.',
-        credit: 5060,
-        paymentStatus: 'Credits',
-        createdAt: 'Aug 6, 2023',
-        coins: 265
-    },
-    {
-        id: '3423335674890673',
-        name: 'Epifanio Isla',
-        phone: '09269603768',
-        address: '558 M De Jesus St.',
-        credit: 5005,
-        paymentStatus: 'Credits',
-        createdAt: 'Jan 6, 2023',
-        coins: 525
-    },
-    {
-        id: '3423321674890673',
-        name: 'Mae Isla',
-        phone: '09269603768',
-        address: '558 M De Jesus St.',
-        credit: 1500,
-        paymentStatus: 'Credits',
-        createdAt: 'Mar 6, 2023',
-        coins: 245
-    },
-    {
-        id: '3423335612390673',
-        name: 'Gerardo Isla',
-        phone: '09269603768',
-        address: '558 M De Jesus St.',
-        credit: 2500,
-        paymentStatus: 'Credits',
-        createdAt: 'May 6, 2023',
-        coins: 225
-    },
-    {
         id: '3423335600090673',
         name: 'Maria Isla',
         phone: '09269603768',
@@ -266,7 +206,13 @@ export const sampleCustomers = [
         credit: 1500,
         paymentStatus: 'Credits',
         createdAt: 'Jul 6, 2023',
-        coins: 245
+        coins: 245,
+        gallonsOwned: [
+            {
+                gallon: "Square Gallon",
+                qty: 2
+            }
+        ]
     },
     {
         id: '3423339994890673',
@@ -276,7 +222,17 @@ export const sampleCustomers = [
         credit: 500,
         paymentStatus: 'Credits',
         createdAt: 'Feb 6, 2023',
-        coins: 235
+        coins: 235,
+        gallonsOwned: [
+            {
+                gallon: "Round Gallon",
+                qty: 2
+            },
+            {
+                gallon: "Square Gallon",
+                qty: 2
+            }
+        ]
     },
     {
         id: '3423338884890673',
@@ -286,7 +242,17 @@ export const sampleCustomers = [
         credit: 5100,
         paymentStatus: 'Credits',
         createdAt: 'Apr 6, 2023',
-        coins: 225
+        coins: 225,
+        gallonsOwned: [
+            {
+                gallon: "Round Gallon",
+                qty: 2
+            },
+            {
+                gallon: "Square Gallon",
+                qty: 2
+            }
+        ]
     },
     {
         id: '3423335622290673',
@@ -296,7 +262,17 @@ export const sampleCustomers = [
         credit: 5200,
         paymentStatus: 'Credits',
         createdAt: 'Jan 6, 2023',
-        coins: 215
+        coins: 215,
+        gallonsOwned: [
+            {
+                gallon: "Round Gallon",
+                qty: 2
+            },
+            {
+                gallon: "Square Gallon",
+                qty: 2
+            }
+        ]
     },
     {
         id: '3423335333890673',
@@ -306,7 +282,17 @@ export const sampleCustomers = [
         credit: 0,
         paymentStatus: 'Paid',
         createdAt: 'june 6, 2023',
-        coins: 25
+        coins: 25,
+        gallonsOwned: [
+            {
+                gallon: "Round Gallon",
+                qty: 2
+            },
+            {
+                gallon: "Square Gallon",
+                qty: 2
+            }
+        ]
     },
     {
         id: '3423335777890673',
@@ -316,7 +302,17 @@ export const sampleCustomers = [
         credit: 500,
         paymentStatus: 'Credits',
         createdAt: 'june 6, 2023',
-        coins: 25
+        coins: 25,
+        gallonsOwned: [
+            {
+                gallon: "Round Gallon",
+                qty: 2
+            },
+            {
+                gallon: "Square Gallon",
+                qty: 2
+            }
+        ]
     },
     {
         id: '3423335444890673',
@@ -326,7 +322,17 @@ export const sampleCustomers = [
         credit: 500,
         paymentStatus: 'Credits',
         createdAt: 'june 6, 2023',
-        coins: 25
+        coins: 25,
+        gallonsOwned: [
+            {
+                gallon: "Round Gallon",
+                qty: 2
+            },
+            {
+                gallon: "Square Gallon",
+                qty: 2
+            }
+        ]
     },
     {
         id: '3423335554890673',
@@ -336,7 +342,17 @@ export const sampleCustomers = [
         credit: 500,
         paymentStatus: 'Credits',
         createdAt: 'june 6, 2023',
-        coins: 25
+        coins: 25,
+        gallonsOwned: [
+            {
+                gallon: "Square Gallon",
+                qty: 2
+            },
+            {
+                gallon: "Round Gallon",
+                qty: 2
+            }
+        ]
     },
     {
         id: '3423335656490673',
@@ -346,7 +362,17 @@ export const sampleCustomers = [
         credit: 0,
         paymentStatus: 'Paid',
         createdAt: 'june 6, 2023',
-        coins: 25
+        coins: 25,
+        gallonsOwned: [
+            {
+                gallon: "Square Gallon",
+                qty: 2
+            },
+            {
+                gallon: "Round Gallon",
+                qty: 2
+            }
+        ]
     },
     {
         id: '3423323174890673',
@@ -356,7 +382,17 @@ export const sampleCustomers = [
         credit: 0,
         paymentStatus: 'Paid',
         createdAt: 'june 6, 2023',
-        coins: 25
+        coins: 25,
+        gallonsOwned: [
+            {
+                gallon: "Square Gallon",
+                qty: 2
+            },
+            {
+                gallon: "Round Gallon",
+                qty: 2
+            }
+        ]
     },
     {
         id: '3423789674890673',
@@ -366,7 +402,17 @@ export const sampleCustomers = [
         credit: 0,
         paymentStatus: 'Paid',
         createdAt: 'june 6, 2023',
-        coins: 25
+        coins: 25,
+        gallonsOwned: [
+            {
+                gallon: "Square Gallon",
+                qty: 2
+            },
+            {
+                gallon: "Round Gallon",
+                qty: 2
+            }
+        ]
     },
     {
         id: '3423335673420673',
@@ -376,7 +422,13 @@ export const sampleCustomers = [
         credit: 0,
         paymentStatus: 'Paid',
         createdAt: 'june 6, 2023',
-        coins: 25
+        coins: 25,
+        gallonsOwned: [
+            {
+                gallon: "Square Gallon",
+                qty: 2
+            }
+        ]
     },
     {
         id: '3423335674567673',
@@ -386,7 +438,13 @@ export const sampleCustomers = [
         credit: 0,
         paymentStatus: 'Paid',
         createdAt: 'june 6, 2023',
-        coins: 25
+        coins: 25,
+        gallonsOwned: [
+            {
+                gallon: "Square Gallon",
+                qty: 2
+            }
+        ]
     },
 ]
 
@@ -523,9 +581,419 @@ export const customers = [
 
 export const orderHistory = [
     {
-
-    } 
-]
+    "_id": "6545e948fc13ae18105539ec",
+    "date": "10/06/2022",
+    "total": 901.25,
+    "payment": 
+      {
+        "settled_Date": "10/6/2022",
+        "status": "Paid",
+        "paid": 79.0,
+        "balance": 620.12,
+        "method": "Cash"
+      }
+    ,
+    "vendor": "Roderic",
+    "delivery": 
+      {
+        "date": "10/6/2022",
+        "address": "593 Hagan Terrace",
+        "status": "Out for Delivery",
+        "courier": "Warlito"
+      }
+    ,
+    "customer": 
+        {
+            "name": "Paulina",
+            "contact": "869-411-2028",
+            "address": "26481 Packers Place"
+    },
+    "items": [
+        {
+            "item": "Square Gallon",
+            "qty": 3,
+            "service": "Refill",
+            "unit_price": 142.84,
+            "sub_total": 194.47
+        },
+        {
+            "item": "10 Liters",
+            "qty": 7,
+            "service": "Refill",
+            "unit_price": 501.48,
+            "sub_total": 969.88
+        }
+    ]
+  }, {
+    "_id": "6545e948fc13ae18105539ed",
+    "date": "10/06/2022",
+    "total": 204.99,
+    "payment": 
+        {
+            "settled_Date": "10/6/2022",
+            "status": "Credited",
+            "paid": 79.0,
+            "balance": 620.12,
+            "method": "Cash"
+        }
+    ,
+    "vendor": "Roderic",
+    "delivery": 
+      {
+        "date": "10/6/2022",
+        "address": "4 Burning Wood Pass",
+        "status": "Delivered",
+        "courier": "Warlito"
+      }
+    ,
+    "customer": 
+        {
+            "name": "Paulina",
+            "contact": "869-411-2028",
+            "address": "26481 Packers Place"
+        }
+    ,
+    "items": [
+        {
+            "item": "Square Gallon",
+            "qty": 3,
+            "service": "Refill",
+            "unit_price": 142.84,
+            "sub_total": 194.47
+          },
+          {
+            "item": "10 Liters",
+            "qty": 7,
+            "service": "Refill",
+            "unit_price": 501.48,
+            "sub_total": 969.88
+          }
+    ]
+  }, {
+    "_id": "6545e948fc13ae18105539ee",
+    "date": "10/06/2022",
+    "total": 382.92,
+    "payment": 
+        {
+            "settled_Date": "10/6/2022",
+            "status": "Paid",
+            "paid": 79.0,
+            "balance": 0,
+            "method": "Cash"
+        }
+    ,
+    "vendor": "Roderic",
+    "delivery": 
+      {
+        "date": "10/6/2022",
+        "address": "1168 Burning Wood Center",
+        "status": "Out for Delivery",
+        "courier": "Warlito"
+      }
+    ,
+    "customer": 
+      {
+        "name": "Paulina",
+        "contact": "869-411-2028",
+        "address": "26481 Packers Place"
+      }
+    ,
+    "items": [
+      {
+        "item": "Square Gallon",
+        "qty": 8,
+        "service": "Purchase",
+        "unit_price": 61.03,
+        "sub_total": 264.67
+      }
+    ]
+  }, {
+    "_id": "6545e948fc13ae18105539ef",
+    "date": "10/06/2022",
+    "total": 206.25,
+    "payment": 
+        {
+            "settled_Date": "10/6/2022",
+            "status": "Credited",
+            "paid": 79.0,
+            "balance": 620.12,
+            "method": "Cash"
+        }
+    ,
+    "vendor": "Roderic",
+    "delivery": 
+      {
+        "date": "10/6/2022",
+        "address": "00267 Mcbride Hill",
+        "status": "Awaiting Delivery",
+        "courier": "Warlito"
+      }
+    ,
+    "customer": 
+      {
+        "name": "Tiebout",
+        "contact": "161-295-8798",
+        "address": "024 Namekagon Street"
+      }
+    ,
+    "items": [
+        {
+            "item": "Square Gallon",
+            "qty": 3,
+            "service": "Refill",
+            "unit_price": 142.84,
+            "sub_total": 194.47
+          },
+          {
+            "item": "10 Liters",
+            "qty": 7,
+            "service": "Refill",
+            "unit_price": 501.48,
+            "sub_total": 969.88
+          }
+    ]
+  }, {
+    "_id": "6545e948fc13ae18105539f0",
+    "date": "10/06/2022",
+    "total": 418.46,
+    "payment": 
+      {
+        "settled_Date": "10/6/2022",
+        "status": "Paid",
+        "paid": 45.31,
+        "balance": 0,
+        "method": "Cash"
+      }
+    ,
+    "vendor": "Roderic",
+    "delivery": 
+        {
+            "date": "10/6/2022",
+            "address": "5648 Bowman Terrace",
+            "status": "For Pickup",
+            "courier": "Warlito"
+        }
+    ,
+    "customer": 
+      {
+        "name": "Myranda",
+        "contact": "737-642-5315",
+        "address": "00 Graceland Avenue"
+      }
+    ,
+    "items": [
+        {
+            "item": "Square Gallon",
+            "qty": 3,
+            "service": "Refill",
+            "unit_price": 142.84,
+            "sub_total": 194.47
+          },
+          {
+            "item": "10 Liters",
+            "qty": 7,
+            "service": "Refill",
+            "unit_price": 501.48,
+            "sub_total": 969.88
+          }
+    ]
+  }, {
+    "_id": "6545e948fc13ae18105539f1",
+    "date": "10/06/2022",
+    "total": 755.37,
+    "payment": 
+        {
+            "settled_Date": "10/6/2022",
+            "status": "Credited",
+            "paid": 79.0,
+            "balance": 620.12,
+            "method": "Cash"
+        }
+    ,
+    "vendor": "Roderic",
+    "delivery": 
+      {
+        "date": "10/6/2022",
+        "address": "5 Hoffman Street",
+        "status": "Delivered",
+        "courier": "Warlito"
+      }
+    ,
+    "customer": 
+      {
+        "name": "Janeczka",
+        "contact": "618-617-8447",
+        "address": "0 Center Crossing"
+      }
+    ,
+    "items": [
+      {
+        "item": "Square Gallon",
+        "qty": 2,
+        "service": "Purchase",
+        "unit_price": 889.13,
+        "sub_total": 229.97
+      }
+    ]
+  }, {
+    "_id": "6545e948fc13ae18105539f2",
+    "date": "10/06/2022",
+    "total": 552.5,
+    "payment": 
+      {
+        "settled_Date": "10/6/2022",
+        "status": "Paid",
+        "paid": 677.66,
+        "balance": 0,
+        "method": "GCash"
+      }
+    ,
+    "vendor": "Roderic",
+    "delivery": 
+        {
+            "date": "10/6/2022",
+            "address": "5648 Bowman Terrace",
+            "status": "For Pickup",
+            "courier": "Warlito"
+        }
+    ,
+    "customer": 
+        {
+            "name": "Paulina",
+            "contact": "869-411-2028",
+            "address": "26481 Packers Place"
+        }
+    ,
+    "items": [
+      {
+        "item": "10 Liters",
+        "qty": 4,
+        "service": "Refill",
+        "unit_price": 900.11,
+        "sub_total": 223.09
+      }
+    ]
+  }, {
+    "_id": "6545e948fc13ae18105539f3",
+    "date": "10/06/2022",
+    "total": 972.33,
+    "payment": 
+      {
+        "settled_Date": "10/6/2022",
+        "status": "Credited",
+        "paid": 403.14,
+        "balance": 283.19,
+        "method": "GCash"
+      }
+    ,
+    "vendor": "Roderic",
+    "delivery": 
+      {
+        "date": "10/6/2022",
+        "address": "7782 South Alley",
+        "status": "Out for Delivery",
+        "courier": "Warlito"
+      }
+    ,
+    "customer": 
+        {
+            "name": "Paulina",
+            "contact": "869-411-2028",
+            "address": "26481 Packers Place"
+        }
+    ,
+    "items": [
+      {
+        "item": "Square Gallon",
+        "qty": 3,
+        "service": "Purchase",
+        "unit_price": 733.61,
+        "sub_total": 966.66
+      }
+    ]
+  }, {
+    "_id": "6545e948fc13ae18105539f4",
+    "date": "10/06/2022",
+    "total": 459.14,
+    "payment": 
+        {
+            "settled_Date": "10/6/2022",
+            "status": "Paid",
+            "paid": 79.0,
+            "balance": 0,
+            "method": "Cash"
+        }
+    ,
+    "vendor": "Roderic",
+    "delivery": 
+        {
+            "date": "10/6/2022",
+            "address": "5648 Bowman Terrace",
+            "status": "For Pickup",
+            "courier": "Warlito"
+        }
+    ,
+    "customer": 
+      {
+        "name": "Sissie",
+        "contact": "670-117-2512",
+        "address": "15299 Mandrake Crossing"
+      }
+    ,
+    "items": [
+      {
+        "item": "10 Liters",
+        "qty": 9,
+        "service": "Refill",
+        "unit_price": 869.19,
+        "sub_total": 525.53
+      }
+    ]
+  }, {
+    "_id": "6545e948fc13ae18105539f5",
+    "date": "10/06/2022",
+    "total": 606.85,
+    "payment": 
+        {
+            "settled_Date": "10/6/2022",
+            "status": "Paid",
+            "paid": 79.0,
+            "balance": 0,
+            "method": "Cash"
+        }
+    ,
+    "vendor": "Roderic",
+    "delivery": 
+      {
+        "date": "10/6/2022",
+        "address": "5648 Bowman Terrace",
+        "status": "For Pickup",
+        "courier": "Warlito"
+      }
+    ,
+    "customer": 
+        {
+            "name": "Paulina",
+            "contact": "869-411-2028",
+            "address": "26481 Packers Place"
+        },
+    "items": [
+      {
+        "item": "Square Gallon",
+        "qty": 3,
+        "service": "Refill",
+        "unit_price": 142.84,
+        "sub_total": 194.47
+      },
+      {
+        "item": "10 Liters",
+        "qty": 7,
+        "service": "Refill",
+        "unit_price": 501.48,
+        "sub_total": 969.88
+      }
+    ]
+}]
 
 export const users = [
         {
@@ -1001,141 +1469,6 @@ export const tableData = [
         payment: 'Pending',
         vendor: 'Kristine',
         Delivery: 'Complete'
-    }
-]
-
-export const salesTableData = [
-    {
-        id: '7946137845128951',
-        date: 'Oct 10, 2023',
-        customer: 'Raphael Isla',
-        items: 2,
-        total: 50.00,
-        service: 'Refill',
-        payment: 'Paid',
-        vendor: 'Kristine',
-        delivery: 'Complete'
-    },
-    {
-        id: '7946137845128952',
-        date: 'Oct 10, 2023',
-        customer: 'Raphael Isla',
-        items: 2,
-        total: 50.00,
-        service: 'Refill',
-        payment: 'Credited',
-        vendor: 'Kristine',
-        delivery: 'Complete'
-    },
-    {
-        id: '7946137845128953',
-        date: 'Oct 10, 2023',
-        customer: 'Raphael Isla',
-        items: 2,
-        total: 50.00,
-        service: 'Refill',
-        payment: 'Paid',
-        vendor: 'Kristine',
-        delivery: 'Complete'
-    },
-    {
-        id: '7946137845128954',
-        date: 'Oct 10, 2023',
-        customer: 'Raphael Isla',
-        items: 2,
-        total: 50.00,
-        service: 'Refill',
-        payment: 'Paid',
-        vendor: 'Kristine',
-        delivery: 'Complete'
-    },
-    {
-        id: '7946137845128955',
-        date: 'Oct 10, 2023',
-        customer: 'Raphael Isla',
-        items: 2,
-        total: 50.00,
-        service: 'Refill',
-        payment: 'Paid',
-        vendor: 'Kristine',
-        delivery: 'Complete'
-    },
-    {
-        id: '7946137845128956',
-        date: 'Oct 10, 2023',
-        customer: 'Raphael Isla',
-        items: 2,
-        total: 50.00,
-        service: 'Refill',
-        payment: 'Paid',
-        vendor: 'Kristine',
-        delivery: 'Complete'
-    },
-    {
-        id: '7946137845128957',
-        date: 'Oct 10, 2023',
-        customer: 'Raphael Isla',
-        items: 2,
-        total: 50.00,
-        service: 'Refill',
-        payment: 'Pending',
-        vendor: 'Kristine',
-        delivery: 'Complete'
-    },
-    {
-        id: '7946137845128958',
-        date: 'Oct 10, 2023',
-        customer: 'Raphael Isla',
-        items: 2,
-        total: 50.00,
-        service: 'Refill',
-        payment: 'Credited',
-        vendor: 'Kristine',
-        delivery: 'Complete'
-    },
-    {
-        id: '7946137845128959',
-        date: 'Oct 10, 2023',
-        customer: 'Raphael Isla',
-        items: 2,
-        total: 50.00,
-        service: 'Refill',
-        payment: 'Credited',
-        vendor: 'Kristine',
-        delivery: 'Complete'
-    },
-    {
-        id: '7946137845128960',
-        date: 'Oct 10, 2023',
-        customer: 'Raphael Isla',
-        items: 2,
-        total: 50.00,
-        service: 'Refill',
-        payment: 'Credited',
-        vendor: 'Kristine',
-        delivery: 'Complete'
-    },
-    {
-        id: '7946137845128961',
-        date: 'Oct 10, 2023',
-        customer: 'Raphael Isla',
-        items: 2,
-        total: 50.00,
-        service: 'Refill',
-        payment: 'Pending',
-        vendor: 'Kristine',
-        delivery: 'Complete'
-    },
-    {
-        id: '7946137845128962',
-        date: 'Oct 10, 2023',
-        customer: 'Raphael Isla',
-        items: 2,
-        total: 50.00,
-        service: 'Refill',
-        payment: 'Pending',
-        vendor: 'Kristine',
-        delivery: 'Complete'
     }
 ]
 
