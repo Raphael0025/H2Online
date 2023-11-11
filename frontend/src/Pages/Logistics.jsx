@@ -32,7 +32,7 @@ const Logistics = () => {
     const accessorFunctionForProgress = (data) => data.progress;
     
     return (
-        <main id='logistic' className='container-fluid h-100'>
+        <main id='logistic' className='container-fluid'>
             <div className='px-3 pt-3'>
                 <h2 className='border-bottom py-2 border-dark-subtle page-header'>Logistics</h2>
             </div>

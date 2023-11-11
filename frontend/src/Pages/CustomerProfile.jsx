@@ -81,8 +81,17 @@ const CustomerProfile = () => {
             qty: 2
         }
     ]
+
+    const [gallonsData, setGallonsData] = useState(gallons);
+    
+    const handleQuantityChange = (index, newValue) => {
+        const updatedGallons = [...gallonsData];
+        updatedGallons[index].qty = newValue;
+        setGallonsData(updatedGallons);
+    };
+    
     return (
-        <main id='customerprofile' className='container-fluid d-flex h-100'>
+        <main id='customerprofile' className='container-fluid d-flex'>
             <section className='container-fluid pe-0'>
                 <div className='px-3 pt-3'>
                     <h2 className='border-bottom py-2 border-dark-subtle page-header'>Order History</h2>
@@ -142,11 +151,11 @@ const CustomerProfile = () => {
                         <div className='p-2'> 
                             <p style={{fontSize: '12px'}} className='m-0'>Gallons Owned</p>
                             <div className='p-1 overflow-y-scroll' style={{height: '230px'}}>
-                            {gallons.map((gallon, indx) => (
+                            {gallonsData.map((gallon, indx) => (
                                 <div key={indx} className='d-flex justify-content-between mb-3 border-bottom border-2 pb-2'>
                                     <span className='d-flex gap-2'>
                                         <span className='d-flex align-items-center ' style={{fontSize: '10px'}}>{gallon.gallon}</span> x
-                                        <input  type='number' value={gallon.qty} style={{width: '50px', fontSize: '10px'}} className='p-1 rounded-2 text-center fw-bolder ' />
+                                        <input min={1} type='number' value={gallon.qty} style={{width: '50px', fontSize: '10px'}} className='p-1 rounded-2 text-center fw-bolder ' onChange={(e) => handleQuantityChange(indx, e.target.value)} />
                                     </span>
                                     <button className='btn btn-sm'><IconPark path={'ant-design:delete-outlined'} size={16} /></button>
                                 </div>
