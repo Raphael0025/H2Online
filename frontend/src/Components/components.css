@@ -109,9 +109,10 @@
 }
   .button-itm:hover{
     cursor: pointer;
-    outline-offset: -5px;
-    outline-color: var(--white);
+    background-color: var(--blue);
+    outline-color: var(--blue);
   }
+
 .button-itm-outline{
   outline: 1px solid var(--dark-blue);
   border: none;
@@ -202,4 +203,9 @@
 .select{
   background-color: var(--dark-blue);
   color: var(--white);
+}
+.modal-content{
+  background: rgba(255,255,255,0.35);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255,255,255,0.175);
 }

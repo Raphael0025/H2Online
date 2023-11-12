@@ -1,6 +1,6 @@
 import React, {useState, useEffect, useCallback} from 'react'
 import { useLocation } from 'react-router-dom';
-import { OverviewComponent, AccordionTable } from 'Components';
+import { OverviewComponent, AccordionTable, EditProfileModal, ReduceCreditModal } from 'Components';
 import { orderHistory, sampleCustomers } from 'Utils/initialData'
 import Avatar from 'react-avatar'
 import {IconPark} from 'Assets/SvgIcons'
@@ -103,7 +103,7 @@ const CustomerProfile = () => {
                                 <button className={`nav-link itm `} onClick={() => setSelectedTab('Paid Credits')}>Paid Credits</button>
                             </li>
                             <li className='nav-item px-3'>
-                                <button className='button-itm py-2 px-3 rounded-3'>+ Reduce Credits</button>
+                                <button className='button-itm py-2 px-3 rounded-3' data-bs-target="#reduceCredit" data-bs-toggle="modal">+ Reduce Credits</button>
                             </li>
                         </ul>
                     </header>
@@ -115,7 +115,7 @@ const CustomerProfile = () => {
             <section className='p-3 ps-0' style={{width: '350px'}}>
                 <section className='p-2 d-flex justify-content-between flex-column px-3 h-100 bg-light rounded-3'>
                     <div>
-                        <span className='user-date'>Created on: {userData.createdAt}</span>
+                        <span className='user-date d-flex justify-content-between align-items-center w-100'>Created on: {userData.createdAt} <button data-bs-target="#editUser" data-bs-toggle="modal" className='p-0 btn'><IconPark path={'bx:edit'} /></button></span>
                         <div className='text-center py-2'>
                             <Avatar src={urlImg || null} name={userData.name} round={true} color='#003E81' fgColor='#fff' size={100} textSizeRatio={2} />
                         </div>
@@ -156,6 +156,8 @@ const CustomerProfile = () => {
                     </div>
                 </section>
             </section>
+            <EditProfileModal />
+            <ReduceCreditModal />
         </main>
     );
 };

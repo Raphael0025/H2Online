@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback} from 'react'
-import { OverviewComponent, TableLink } from 'Components'
+import { OverviewComponent, TableLink, NewCustomerModal } from 'Components'
 import { sortContents } from 'Utils/handlingFunctions'
 import {sampleCustomers} from 'Utils/initialData'
 const CustomerMgmt = () => {
@@ -60,9 +60,10 @@ const CustomerMgmt = () => {
                             <button className={`nav-link itm `} onClick={() => setSelectedTab('Credited')}>Credited Customers</button>
                         </li>
                         <li className='nav-item px-3'>
-                            <button className='button-itm py-2 px-3 rounded-3'>+ New Customer</button>
+                            <button type='button' className='button-itm py-2 px-3 rounded-3' data-bs-toggle="modal" data-bs-target="#staticBackdrop">+ New Customer</button>
                         </li>
                     </ul>
+                    
                     <div className='d-flex gap-2 align-items-end'>
                         <div className="dropdown">
                             <button className="button-itm py-2 px-3 rounded-3 dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Sort By: {sortOrder}</button>
@@ -84,6 +85,7 @@ const CustomerMgmt = () => {
                     <TableLink headers={headers} data={filteredContents} />
                 </div>
             </section>
+            <NewCustomerModal />
         </main>
     )
 }
