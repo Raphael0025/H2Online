@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import { OverviewComponent, AccordionTable, Table } from 'Components'
+import { OverviewComponent, AccordionTable, Table, IncomeModal, NewExpenseModal, ViewExpenseModal } from 'Components'
 import { orderHistory, productsSoldData, expensesData } from 'Utils/initialData'
 import { filteredTableData } from 'Utils/handlingFunctions'
 const SalesMgmt = () => {
@@ -33,11 +33,11 @@ const SalesMgmt = () => {
     const [selectedTab, setSelectedTab] = useState('All');
     const accessorFunctionForPayment = (data) => data.payment.status;
 
-    return (
+    return ( 
         <main id='sales' className='container-fluid'>
             <div className='mx-3 pt-3 pb-2 d-flex justify-content-between border-bottom border-dark-subtle'>
                 <h2 className='m-0 page-header'>Overview</h2>
-                <button className='rounded-3 button-itm px-3'>Generate Report</button>
+                <button className='rounded-3 button-itm px-3' data-bs-target='#incomeMod' data-bs-toggle='modal'>Generate Report</button>
             </div>
             <section className='container-fluid p-3 d-flex' style={{gap: '20px'}} >
             {headers.map((data, indx) => (
@@ -72,11 +72,14 @@ const SalesMgmt = () => {
                 <div className='bg-light flex-fill p-3 rounded-3'>
                     <div className='d-flex justify-content-between pb-2'>
                         <h6 className='header-txt'>Expenses</h6>
-                        <button className='button-itm rounded-3 py-2 px-3'>Add Expense</button>
+                        <button className='button-itm rounded-3 py-2 px-3' data-bs-target='#newExpense' data-bs-toggle='modal'>Add Expense</button>
                     </div>
                     <Table headers={expensesHeaders} data={expensesData} height={'250px'}/>
                 </div>
             </section>
+            <IncomeModal /> 
+            <NewExpenseModal /> 
+            <ViewExpenseModal />
         </main>
     )
 }

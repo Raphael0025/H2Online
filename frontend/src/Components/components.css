@@ -114,8 +114,7 @@
   }
 
 .button-itm-outline{
-  outline: 1px solid var(--dark-blue);
-  border: none;
+  border: 1px solid var(--dark-blue);
   color: var(--dark-blue);
   transition: all 0.3s ease-in-out;
   background-color: transparent;
@@ -204,8 +203,9 @@
   background-color: var(--dark-blue);
   color: var(--white);
 }
-.modal-content{
-  background: rgba(255,255,255,0.35);
-  backdrop-filter: blur(5px);
-  border: 1px solid rgba(255,255,255,0.175);
+.neuromorphism{
+  border-radius: 0px;
+  background: #75CDFF;
+  box-shadow: inset 9px -9px 18px #60a8d1,
+              inset -9px 9px 18px #8af2ff;
 }

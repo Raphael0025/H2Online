@@ -1,22 +1,14 @@
 import React from 'react'
+import { calculateStatus } from 'Utils/handlingFunctions'
+import { ViewItemModal } from 'Components';
 
 const ItemCard = ({data}) => {
     const { item, max, stock, unitPrice } = data
     
-    const calculateStatus = () => {
-        const stockPercentage = (stock / max) * 100;
-        if (stockPercentage <= 20) {
-            return 'Low';
-        } else if (stockPercentage <= 50) {
-            return 'Half';
-        }
-        return 'Full';
-    };
-
-    const status = calculateStatus();
+    const status = calculateStatus(stock, max);
 
     return (
-        <div className={`p-3 bg-light rounded-3 border-start border-5 ${status === 'Low' ? 'border-danger' : status === 'Half' ? 'border-warning' : 'border-success' }`} style={{width: '230px'}}>
+        <div data-bs-target='#viewItem' data-bs-toggle="modal" className={`p-3 bg-light rounded-3 border-start border-5 ${status === 'Low' ? 'border-danger' : status === 'Half' ? 'border-warning' : 'border-success' }`} style={{width: '230px'}}>
             {/* <img src={imge} alt={imge} /> */}
             <div className='mt-2 d-flex flex-column itm-card'>
                 <div className='d-flex justify-content-between'>
@@ -42,10 +34,11 @@ const ItemCard = ({data}) => {
                     </div>
                     <div className='d-flex gap-2'>
                         <button className='button-itm-outline rounded-3 p-2 px-3'>All</button>
-                        <button className='button-itm rounded-3 p-2'>Partial</button>
+                        <button className='button-itm rounded-3 p-2 px-3' data-bs-target='#reStock' data-bs-toggle="modal">Partial</button>
                     </div>
                 </div>
             </div>
+            <ViewItemModal data={data} />
         </div>
     )
 }

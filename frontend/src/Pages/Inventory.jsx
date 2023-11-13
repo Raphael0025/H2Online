@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ItemCard } from 'Components';
+import { ItemCard, NewItemModal, ReStockModal } from 'Components';
 import {inventoryContents} from 'Utils/initialData'
 import { filterInventoryItems, getStockStatus } from 'Utils/handlingFunctions'
 const Inventory = () => {
@@ -28,7 +28,7 @@ const Inventory = () => {
                             <button className={`nav-link itm`} onClick={() => setSelectedTab('Low Stock')}>Low Stock</button>
                         </li>
                         <li className='nav-item px-3'>
-                            <button className='button-itm py-2 px-3 rounded-3'>+ Add Item</button>
+                            <button className='button-itm py-2 px-3 rounded-3' data-bs-toggle="modal" data-bs-target="#newItem">+ Add Item</button>
                         </li>
                     </ul>
                 </header>
@@ -38,6 +38,8 @@ const Inventory = () => {
                 ))}
                 </section>
             </section>
+            <NewItemModal />
+            <ReStockModal />
         </main>
     );
 };

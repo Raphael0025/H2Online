@@ -33,7 +33,7 @@ import PromptModal from './Modals/Ordering/PromptModal'
 import ReceiptModal from './Modals/Ordering/ReceiptModal'
 import WarningModal from './Modals/Ordering/WarningModal'
 import BookingModal from './Modals/Pickup/BookingModal'
-import PromptBooking from './Modals/Pickup/PromptBookingModal'
+import PromptBookingModal from './Modals/Pickup/PromptBookingModal'
 import IncomeModal from './Modals/Sales/IncomeModal'
 import NewExpenseModal from './Modals/Sales/NewExpenseModal'
 import ViewExpenseModal from './Modals/Sales/ViewExpenseModal'
@@ -45,4 +45,4 @@ import ScheduleModal from './Modals/POS/ScheduleModal'
 
 import './components.css'
 
-export { Navigation, Receipt, SubDetails, POSItem, ItemCard, OverviewComponent, MultiSelectionTable, OverviewComponent2, AccordionTable2, TableLink, BookingItem, DoughnutChart, LineChart, AccordionTable, Table, NewCustomerModal, EditProfileModal, ReduceCreditModal, DeliveryPromptModal, UpdateProgressModal, NewItemModal, ReStockModal, ViewItemModal, MeterModal, OrderDetailsModal, PayBalanceModal, PromptModal, ReceiptModal, WarningModal, BookingModal, PromptBooking, IncomeModal, NewExpenseModal, ViewExpenseModal, CancelModal, CashPaymentModal, CreditModal, PayLaterModal, ScheduleModal } 
+export { Navigation, Receipt, SubDetails, POSItem, ItemCard, OverviewComponent, MultiSelectionTable, OverviewComponent2, AccordionTable2, TableLink, BookingItem, DoughnutChart, LineChart, AccordionTable, Table, NewCustomerModal, EditProfileModal, ReduceCreditModal, DeliveryPromptModal, UpdateProgressModal, NewItemModal, ReStockModal, ViewItemModal, MeterModal, OrderDetailsModal, PayBalanceModal, PromptModal, ReceiptModal, WarningModal, BookingModal, PromptBookingModal, IncomeModal, NewExpenseModal, ViewExpenseModal, CancelModal, CashPaymentModal, CreditModal, PayLaterModal, ScheduleModal } 

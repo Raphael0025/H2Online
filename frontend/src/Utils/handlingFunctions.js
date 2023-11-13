@@ -50,7 +50,7 @@ export const filterInventoryItems = (inventoryContents, getStockStatus, tab) => 
             return stockStatus === tab;
         });
     }
-};
+}
 
 export const getStockStatus = (stock, max) => {
     if (stock <= 0) {
@@ -73,7 +73,6 @@ export const filteredTableData = (tableData, selectedTab, accessorFunction) => {
         return fieldValue.toLowerCase() === selectedTab.toLowerCase();
     });
 }
-
 
 export const calculateTotalPrice = (selectedItems = [], discount) => {
     const totalSubPrice = selectedItems.reduce((total, item) => total + item.sub_price, 0);
@@ -182,4 +181,14 @@ export const handleUpdateQuantity = (itemIndex, newQuantity, setSelectedItems, s
         updatedItems[itemIndex].sub_price = newQuantity * updatedItems[itemIndex].unit_price;
         setSelectedItems(updatedItems);
     }
+}
+
+export const calculateStatus = (stock, max) => {
+    const stockPercentage = (stock / max) * 100;
+    if (stockPercentage <= 20) {
+        return 'Low';
+    } else if (stockPercentage <= 50) {
+        return 'Half';
+    }
+    return 'Full';
 }

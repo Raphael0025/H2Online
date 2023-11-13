@@ -1,5 +1,5 @@
 import React from 'react'
-import { BookingItem } from 'Components'
+import { BookingItem, BookingModal, PromptBookingModal } from 'Components' 
 import { reservations } from 'Utils/initialData'
 
 const LogisticBooking = () => {
@@ -12,7 +12,7 @@ const LogisticBooking = () => {
                 <section className='p-3 rounded-3 w-50 bg-light' style={{overflow: 'hidden'}}>
                     <div className='d-flex mb-2 justify-content-between align-items-center'>
                         <span className='inner-header'>Reservations</span>
-                        <button className='button-itm py-2 px-3 rounded-3'>Book Now</button>
+                        <button className='button-itm py-2 px-3 rounded-3' data-bs-target="#bookMod" data-bs-toggle="modal">Book Now</button>
                     </div>
                     <div className='lists gap-3 d-flex flex-column pb-5 h-100'>
                         {reservations.map((reservation, indx) => (
@@ -23,7 +23,7 @@ const LogisticBooking = () => {
                 <section className='p-3 rounded-3 w-50 bg-light' style={{overflow: 'hidden'}}>
                     <div className='d-flex mb-2 justify-content-between align-items-center'>
                         <span className='inner-header'>Reservation Inquiries</span>
-                        <button className='button-itm py-2 px-3 rounded-3'>Approved</button>
+                        <button className='button-itm py-2 px-3 rounded-3' data-bs-target="#promptBook" data-bs-toggle="modal">Approved</button>
                     </div>
                     <div className='lists gap-3 d-flex flex-column pb-5 h-100'>
                         {reservations.map((reservation, indx) => (
@@ -32,6 +32,8 @@ const LogisticBooking = () => {
                     </div>
                 </section>.
             </section>
+            <PromptBookingModal />
+            <BookingModal />
         </main>
     )
 }

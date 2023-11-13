@@ -32,7 +32,7 @@ const NewCustomerModal = () => {
                                     <input type='telephone' id='phone' className='p-2 bg-light rounded-3 w-100' placeholder='Contact No.#' required/>
                                 </div>
                                 <div className="dropdown w-100">
-                                    <button className="btn w-100 button-itm-outline text-primary bg-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <button className="btn w-100 pt-2 button-itm-outline text-primary bg-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                         Gender
                                     </button>
                                     <ul className="dropdown-menu">
@@ -56,8 +56,8 @@ const NewCustomerModal = () => {
                                 </div>
                             </div>
                             <div className='py-2 px-0 d-flex modal-footer justify-content-between'>
-                                <button type='button' data-bs-dismiss="modal" className='button-itm-outline-dngr py-2 px-3 rounded-3 text-uppercase'>Cancel <IconPark path={'basil:cancel-outline'} size={18} /></button>
-                                <button type='submit' className='button-itm py-2 px-3 rounded-3 text-uppercase'>Create <IconPark path={'gridicons:create'} size={18} /></button>
+                                <button type='button' data-bs-dismiss="modal" className='button-itm-outline-dngr py-2 px-3 gap-2 d-flex align-items-center rounded-3 text-uppercase'>Cancel <IconPark path={'basil:cancel-outline'} size={18} /></button>
+                                <button type='submit' className='button-itm py-2 px-3 rounded-3 d-flex align-items-center gap-2 text-uppercase'>Create <IconPark path={'gridicons:create'} size={18} /></button>
                             </div>
                         </form>
                     </div>
