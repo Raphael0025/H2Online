@@ -7,8 +7,8 @@ import { IoCartOutline, IoCart } from 'react-icons/io5'
 import { PiCoins, PiCoinsFill } from 'react-icons/pi'
 import { BiSolidMessage } from 'react-icons/bi'
 import { MDIcon, IconPark, InventoryIcon } from '../Assets/SvgIcons'
-import { mdiPrinterPos, mdiPrinterPosOutline, mdiTruckDeliveryOutline, mdiTruckDelivery } from '@mdi/js';
-import { format } from 'date-fns';
+import { mdiPrinterPos, mdiPrinterPosOutline, mdiTruckDeliveryOutline, mdiTruckDelivery } from '@mdi/js'
+import { format } from 'date-fns'
 import { Link } from 'react-router-dom'
 import { handleActiveItem, iconPath, formattedDate, formattedTime } from 'Utils/handlingFunctions'
 
