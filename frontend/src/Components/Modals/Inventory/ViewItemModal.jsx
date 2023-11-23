@@ -4,13 +4,22 @@ import {IconPark} from 'Assets/SvgIcons'
 const ViewItemModal = ({data}) => {
     const [inv, setInv] = useState({
         item: '',
-        max: '',
-        stock: '',
-        unitPrice: ''
+        unitPrice: 1,
+        stock: 1,
+        max: 1,
+        
     })
 
     useEffect(() => {
-        setInv(data) // Corrected to pass the entire data object
+        if (data) {
+            setInv({
+                item: data.item || '',
+                unitPrice: data.unitPrice || 1,
+                stock: data.stock || 1,
+                max: data.max || 1,
+                
+            });
+        }
     }, [data])
 
     const handleChange = (e) => {
@@ -30,7 +39,6 @@ const ViewItemModal = ({data}) => {
                         <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div className="modal-body">
-                    <p>{data.item}</p>
                         <form action='/point-of-sales' className='d-flex flex-column gap-2 px-3'>
                             <div className='d-flex gap-2'>
                                 <div className='d-flex flex-column w-100'>

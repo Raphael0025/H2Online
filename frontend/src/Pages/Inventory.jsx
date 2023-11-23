@@ -4,7 +4,7 @@ import {inventoryContents} from 'Utils/initialData'
 import { filterInventoryItems, getStockStatus, calculateStatus } from 'Utils/handlingFunctions'
 const Inventory = () => {
     const [selectedTab, setSelectedTab] = useState('All')
-    const [selectedItem, setSelectedItem] = useState({}); // Track the selected item
+    const [selectedItem, setSelectedItem] = useState(null); // Track the selected item
 
     // Function to filter items based on the selected tab and Function to determine stock status
     const filteredItems = filterInventoryItems(inventoryContents, getStockStatus, selectedTab)
@@ -49,7 +49,7 @@ const Inventory = () => {
                 </header>
                 <section className='py-3 d-flex gap-3 flex-wrap'>
                 {filteredItems.map((sampleData, indx) => (
-                    <div key={indx} className={`p-3 bg-light rounded-3 border-start border-5 ${decide(sampleData.stock, sampleData.max)}`} style={{width: '230px'}} >
+                    <div key={indx} data-bs-target='#viewItem' data-bs-toggle="modal" onClick={() => handleSelectItem(sampleData)} className={`p-3 bg-light rounded-3 border-start border-5 ${decide(sampleData.stock, sampleData.max)}`} style={{width: '230px'}} >
                         {/* <img src={imge} alt={imge} /> */}
                         <div className='mt-2 d-flex flex-column itm-card'>
                             <div className='d-flex justify-content-between'>
@@ -74,7 +74,7 @@ const Inventory = () => {
                                     <span className='label'>Re-Stock</span>
                                 </div>
                                 <div className='d-flex gap-2'>
-                                    <button className='button-itm-outline rounded-3 p-2 px-3' data-bs-target='#viewItem' data-bs-toggle="modal" onClick={() => handleSelectItem(sampleData)}>All</button>
+                                    <button className='button-itm-outline rounded-3 p-2 px-3'>All</button>
                                     <button className='button-itm rounded-3 p-2 px-3' data-bs-target='#reStock' data-bs-toggle="modal">Partial</button>
                                 </div>
                             </div>
