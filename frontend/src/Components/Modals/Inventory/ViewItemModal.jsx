@@ -1,7 +1,26 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import {IconPark} from 'Assets/SvgIcons'
 
 const ViewItemModal = ({data}) => {
+    const [inv, setInv] = useState({
+        item: '',
+        max: '',
+        stock: '',
+        unitPrice: ''
+    })
+
+    useEffect(() => {
+        setInv(data) // Corrected to pass the entire data object
+    }, [data])
+
+    const handleChange = (e) => {
+        const { id, value } = e.target;
+        setInv((prevData) => ({
+            ...prevData,
+            [id]: value,
+        }));
+    }
+    
     return (
         <div className={`modal fade`} id="viewItem" data-bs-backdrop="static" data-bs-keyboard="false" tabIndex="-1" aria-labelledby="staticBackdropLabel" aria-hidden={true}>
             <div className="modal-dialog">
@@ -11,25 +30,26 @@ const ViewItemModal = ({data}) => {
                         <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div className="modal-body">
+                    <p>{data.item}</p>
                         <form action='/point-of-sales' className='d-flex flex-column gap-2 px-3'>
                             <div className='d-flex gap-2'>
                                 <div className='d-flex flex-column w-100'>
-                                    <label htmlFor='itm' >Enter Item</label>
-                                    <input value={data.item} type='text' id='itm' className='p-2 bg-light rounded-3 w-100' placeholder='Enter Item' required />
+                                    <label htmlFor='item' >Enter Item</label>
+                                    <input value={inv.item} onChange={handleChange} type='text' id='item' className='p-2 bg-light rounded-3 w-100' placeholder='Enter Item' required />
                                 </div>
                                 <div className='d-flex flex-column w-100'>
-                                    <label htmlFor='unit_price' >Unit Price</label>
-                                    <input value={data.unitPrice} type='number' min={1} id='unit_price' className='p-2 bg-light rounded-3 w-100' placeholder='Unit Price' required />
+                                    <label htmlFor='unitPrice' >Unit Price</label>
+                                    <input value={inv.unitPrice} onChange={handleChange} type='number' min={1} id='unitPrice' className='p-2 bg-light rounded-3 w-100' placeholder='Unit Price' required />
                                 </div>
                             </div>
                             <div className='d-flex gap-2'>
                                 <div className='d-flex flex-column w-100'>
-                                    <label htmlFor='curr_stock' >Current Stock</label>
-                                    <input type='number' value={data.stock} min={1} id='curr_stock' className='p-2 bg-light rounded-3 w-100' placeholder='Current Stock' required />
+                                    <label htmlFor='stock' >Current Stock</label>
+                                    <input type='number' value={inv.stock} onChange={handleChange} min={1} id='stock' className='p-2 bg-light rounded-3 w-100' placeholder='Current Stock' required />
                                 </div>
                                 <div className='d-flex flex-column w-100'>
-                                    <label htmlFor='max_stock' >Max Stock</label>
-                                    <input type='number' value={data.max} min={1} id='max_stock' className='p-2 bg-light rounded-3 w-100' placeholder='Max Stock' required />
+                                    <label htmlFor='max' >Max Stock</label>
+                                    <input type='number' value={inv.max} onChange={handleChange} min={1} id='max' className='p-2 bg-light rounded-3 w-100' placeholder='Max Stock' required />
                                 </div>
                             </div>
                             <div className='d-flex gap-2 flex-column'>
@@ -50,7 +70,7 @@ const ViewItemModal = ({data}) => {
                                 <button type='button' data-bs-dismiss="modal" className='button-itm-outline-dngr py-2 px-3 rounded-3 text-uppercase d-flex align-items-center gap-2'>Delete <IconPark path={'material-symbols:delete-outline'} size={18} /></button>
                                 <div className='d-flex gap-3'>
                                     <button type='button' data-bs-dismiss="modal" className='button-itm-outline-dngr py-2 px-3 rounded-3 text-uppercase d-flex align-items-center gap-2'>Cancel <IconPark path={'ic:sharp-update-disabled'} size={18} /></button>
-                                    <button type='submit' className='button-itm py-2 px-3 rounded-3 text-uppercase d-flex align-items-center gap-2'>Update <IconPark path={'clarity:update-line'} size={18} /></button>
+                                    <button className='button-itm py-2 px-3 rounded-3 text-uppercase d-flex align-items-center gap-2'>Update <IconPark path={'clarity:update-line'} size={18} /></button>
                                 </div>
                             </div>
                         </form>

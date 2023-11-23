@@ -1114,37 +1114,43 @@ export const doughnutData = [25, 30, 15, 50]
 
 export const inventoryContents = [
     {
+        id: 1,
         item: 'Square Gallon',
         max: 50,
         stock: 20,
         unitPrice: 340,
     },
     {
-        item: 'Square Gallon',
+        id: 2,
+        item: 'Round Gallon',
         max: 50,
         stock: 35,
         unitPrice: 340,
     },
     {
+        id: 3,
         item: 'Square Gallon',
         max: 50,
         stock: 20,
         unitPrice: 340,
     },
     {
-        item: 'Square Gallon',
+        id: 4,
+        item: 'Round Gallon',
         max: 50,
         stock: 15,
         unitPrice: 340,
     },
     {
+        id: 5,
         item: 'Square Gallon',
         max: 25,
         stock: 25,
         unitPrice: 340,
     },
     {
-        item: 'Square Gallon',
+        id: 6,
+        item: 'Round Gallon',
         max: 70,
         stock: 14,
         unitPrice: 340,
