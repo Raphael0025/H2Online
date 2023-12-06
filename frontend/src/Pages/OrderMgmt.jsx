@@ -14,7 +14,7 @@ const OrderMgmt = () => {
     const accessorFunctionForPayment = (data) => data.payment.status;
     
     return (
-        <main id='order' className='container-fluid h-100'>
+        <main id='order' className='container-fluid pb-3'>
             <div className='px-3 pt-3'>
                 <h2 className='border-bottom py-2 border-dark-subtle page-header'>Order List</h2>
             </div>

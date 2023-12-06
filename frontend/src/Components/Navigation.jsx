@@ -86,14 +86,14 @@ const Navigation = () => {
                 <div className='w-50 pe-5 d-flex justify-content-end align-items-center gap-3'>
                     <div className='fw-medium rounded-3 py-2 px-3 bg-light d-flex align-items-center justify-content-center gap-1'><BsFillClockFill size={16} color={'#005EC3'}/>{formattedTime(format, currentDateTime)}</div>
                     <div className='fw-medium rounded-3 py-2 px-3 bg-light d-flex align-items-center justify-content-center gap-1'><BsCalendar3 size={16} color={'#005EC3'}/>{formattedDate(format, currentDateTime)}</div>
-                    <div className='d-flex gap-3'>
+                    {/* <div className='d-flex gap-3'>
                         <a href='/' className='itm'>
                             <BiSolidMessage size={22}/>
                         </a>
                         <a href='/' className='itm'>
                             <BsBellFill size={22}/>
                         </a>
-                    </div>
+                    </div> */}
                 </div>
             </header>
         </>

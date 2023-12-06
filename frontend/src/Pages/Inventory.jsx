@@ -74,7 +74,7 @@ const Inventory = () => {
                                     <span className='label'>Re-Stock</span>
                                 </div>
                                 <div className='d-flex gap-2'>
-                                    <button className='button-itm-outline rounded-3 p-2 px-3'>All</button>
+                                    <button type='button' data-bs-target='#reStock' data-bs-toggle="modal" className='button-itm-outline rounded-3 p-2 px-3'>All</button>
                                     <button className='button-itm rounded-3 p-2 px-3' data-bs-target='#reStock' data-bs-toggle="modal">Partial</button>
                                 </div>
                             </div>
