@@ -1,7 +1,7 @@
 import {UserAuth} from 'Auth'
 import { PageLink } from 'Views';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { UserProvider } from './UserContext'
+import { UserProvider } from 'Context/UserContext'
 
 function App() {
   return (

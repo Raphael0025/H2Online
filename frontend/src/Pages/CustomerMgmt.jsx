@@ -18,11 +18,34 @@ const CustomerMgmt = () => {
 
     const [searchQuery, setSearchQuery] = useState('');
     const [sortOrder, setSortOrder] = useState('Latest'); // Default sort order
-    const [filteredContents, setFilteredContents] = useState(sampleCustomers);
+    const [filteredContents, setFilteredContents] = useState([]);
+
     const [selectedTab, setSelectedTab] = useState('All');
 
+    const [usersData, setUsersData] = useState([]);
+    const [loading, setLoading] = useState(true);
+
+    const fetchUsersData = async () => {
+        try {
+            const response = await fetch('http://localhost/api/users');
+            if (!response.ok) {
+            throw new Error('Failed to fetch users data');
+            }
+            const data = await response.json();
+            setUsersData(data);
+        } catch (error) {
+            console.error(error);
+        } finally {
+            setLoading(false);
+        }
+    }
+    
+    useEffect(() => {
+        fetchUsersData();
+    }, []);
+    
     const updateFilteredContents = useCallback(() => {
-        let filtered = sampleCustomers;
+        let filtered = usersData.slice()
 
         if (selectedTab === 'Credited') {
             filtered = filtered.filter((content) => content.credit > 0);
@@ -34,7 +57,7 @@ const CustomerMgmt = () => {
         filtered = sortContents(filtered, sortOrder);
 
         setFilteredContents(filtered);
-    }, [searchQuery, sortOrder, selectedTab]);
+    }, [searchQuery, sortOrder, selectedTab, usersData]);
 
     useEffect(() => {
         updateFilteredContents() // Update finalContents whenever the sortOrder changes
@@ -82,7 +105,13 @@ const CustomerMgmt = () => {
                     </div>
                 </header>
                 <div className='w-100 py-2' >
+                {loading ? (
+                    <p className='w-100 text-center'>Loading...</p>
+                ) : usersData.length === 0 ? (
+                    <p className='w-100 text-center'>No customers found. Add a customer.</p>
+                ) : (
                     <TableLink headers={headers} data={filteredContents} />
+                )}
                 </div>
             </section>
             <NewCustomerModal />
