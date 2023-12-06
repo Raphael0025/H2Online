@@ -47,9 +47,9 @@ const CustomerProfile = () => {
         updateFilteredContents() // Update finalContents whenever the sortOrder changes
     }, [updateFilteredContents])
 
-    const urlImg = av;
+    const urlImg = av
 
-    const [gallonQuantities, setGallonQuantities] = useState(userData.gallonsOwned.map((gallon) => gallon.qty));
+    const [gallonQuantities, setGallonQuantities] = useState(userData.gallonsOwned.map((gallon) => gallon.qty))
     
     const handleQuantityChange = (newQuantity, index) => {
         // Ensure the new quantity is not less than 0
@@ -60,8 +60,8 @@ const CustomerProfile = () => {
             const updatedQuantities = [...prevQuantities];
             updatedQuantities[index] = newQuantity;
             return updatedQuantities;
-        });
-    };
+        })
+    }
     
     const handleDeleteGallon = (index) => {
         // Create a copy of the gallonQuantities array and remove the quantity at the specified index
@@ -77,7 +77,7 @@ const CustomerProfile = () => {
     
         // Update userData with the modified gallonsOwned
         userData.gallonsOwned = updatedGallonsOwned;
-    };
+    }
 
     return (
         <main id='customerprofile' className='container-fluid d-flex'>

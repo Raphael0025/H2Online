@@ -20,7 +20,7 @@ const TableBody = ({dataContents, height}) => {
                 <div role='row' className={`table-row d-flex text-center py-2 rounded-3 ${selectedRow === data ? 'selected' : ''}`} onClick={() => setSelectedRow(data)} >
                     <span className='w-100 text-truncate' style={{fontSize: '12px'}} role='cell' > {data._id} </span>
 
-                    <span className='w-100 text-truncate' style={{fontSize: '12px'}} role='cell' > {data.user_name} </span>
+                    <span className='w-100 text-truncate' style={{fontSize: '12px'}} role='cell' > {data.first_name} {data.last_name} </span>
                     <span className='w-100 text-truncate' style={{fontSize: '12px'}} role='cell' > {data.phone} </span>
                     <span className='w-100 text-truncate' style={{fontSize: '12px'}} role='cell' > {data.address} </span>
                     <span className='w-100 text-truncate' style={{fontSize: '12px'}} role='cell' > {data.creditBalance} </span>

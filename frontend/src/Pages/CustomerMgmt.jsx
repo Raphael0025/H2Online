@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback} from 'react'
 import { OverviewComponent, TableLink, NewCustomerModal } from 'Components'
 import { sortContents } from 'Utils/handlingFunctions'
-import {sampleCustomers} from 'Utils/initialData'
+
 const CustomerMgmt = () => {
     const header = [
         {
@@ -53,7 +53,7 @@ const CustomerMgmt = () => {
         }
     
         filtered = filtered.filter((content) =>
-            content.user_name && content.user_name.toLowerCase().includes(searchQuery.toLowerCase())
+            content.first_name && content.first_name.toLowerCase().includes(searchQuery.toLowerCase())
         );
     
         filtered = sortContents(filtered, sortOrder);

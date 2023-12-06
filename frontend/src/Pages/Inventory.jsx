@@ -43,7 +43,7 @@ const Inventory = () => {
                             <button className={`nav-link itm`} onClick={() => setSelectedTab('Low Stock')}>Low Stock</button>
                         </li>
                         <li className='nav-item px-3'>
-                            <button className='button-itm py-2 px-3 rounded-3'>+ Add Item</button>
+                            <button className='button-itm py-2 px-3 rounded-3' data-bs-target='#newItem' data-bs-toggle="modal">+ Add Item</button>
                         </li>
                     </ul>
                 </header>

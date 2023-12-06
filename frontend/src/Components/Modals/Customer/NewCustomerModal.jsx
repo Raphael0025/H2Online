@@ -3,7 +3,8 @@ import {IconPark} from 'Assets/SvgIcons'
 
 const NewCustomerModal = () => {
     const [formData, setFormData] = useState({
-        user_name: '',
+        first_name: '',
+        last_name: '',
         phone: '',
         gender: '',
         address: '',
@@ -13,38 +14,44 @@ const NewCustomerModal = () => {
     })
 
     const handleChange = (e) => {
-        const { name, value } = e.target;
-
-            // If it's any other field, update formData normally
-            setFormData((prevData) => ({
-                ...prevData,
-                [name]: value,
-            }));
-        
+        const { id, value } = e.target;
+    // If it's any other field, update formData normally
+        setFormData((prevData) => ({
+            ...prevData,
+            [id]: value,
+        }));        
     }
 
     const handleSubmit = async (e) => {
         e.preventDefault();
     
+        // Check if required fields are empty before submitting
+        if (!formData.first_name || !formData.last_name || !formData.phone || !formData.email || !formData.password) {
+            alert('Please fill in all required fields.');
+            return;
+        }
+    
         try {
             const response = await fetch('http://localhost:4000/api/users', {
                 method: 'POST',
                 headers: {
-                'Content-Type': 'application/json',
+                    'Content-Type': 'application/json',
                 },
                 body: JSON.stringify(formData),
             });
-            console.log('Submitting data:', formData)
-            alert('Customer created successfully')
+    
+            console.log('Submitting data:', formData);
+    
             if (!response.ok) {
                 throw new Error('Failed to create customer');
             }
     
-          // Optionally, you can handle success, close the modal, or update the UI here
+            // Optionally, you can handle success, close the modal, or update the UI here
+            alert('Customer created successfully');
         } catch (error) {
             console.log('Error creating customer:', error);
         }
-    }
+    }    
 
     const handleGenderChange = (selectedGender) => {
         setFormData((prevData) => ({
@@ -56,6 +63,8 @@ const NewCustomerModal = () => {
     const handleCancel = () => {
         // Clear the form data
         setFormData({
+            first_name: '',
+            last_name: '',
             phone: '',
             gender: '',
             address: '',
@@ -84,12 +93,12 @@ const NewCustomerModal = () => {
                         <form onSubmit={handleSubmit} className='d-flex flex-column gap-2'>
                             <div className='d-flex gap-3'>
                                 <div className='d-flex flex-column w-100'>
-                                    <label htmlFor='fname' >First Name</label>
-                                    <input type='text' id='fname' onChange={handleChange} className='p-2 bg-light rounded-3 w-100' placeholder='First Name' required />
+                                    <label htmlFor='first_name' >First Name</label>
+                                    <input type='text' id='first_name' onChange={handleChange} className='p-2 bg-light rounded-3 w-100' placeholder='First Name' required />
                                 </div>
                                 <div className='d-flex flex-column w-100'>
-                                    <label htmlFor='lname' >Last Name</label>
-                                    <input type='text' id='lname' onChange={handleChange} className='p-2 bg-light rounded-3 w-100' placeholder='Last Name' required />
+                                    <label htmlFor='last_name' >Last Name</label>
+                                    <input type='text' id='last_name' onChange={handleChange} className='p-2 bg-light rounded-3 w-100' placeholder='Last Name' required />
                                 </div>
                             </div>
                             <div className='d-flex gap-3 align-items-end justify-content-end'>
