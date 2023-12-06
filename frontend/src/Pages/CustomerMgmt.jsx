@@ -27,14 +27,15 @@ const CustomerMgmt = () => {
 
     const fetchUsersData = async () => {
         try {
-            const response = await fetch('http://localhost/api/users');
+            const response = await fetch('http://localhost:4000/api/users');
             if (!response.ok) {
             throw new Error('Failed to fetch users data');
             }
             const data = await response.json();
-            setUsersData(data);
+            setUsersData(data)
+            console.log(data)
         } catch (error) {
-            console.error(error);
+            console.log(error);
         } finally {
             setLoading(false);
         }
@@ -45,19 +46,21 @@ const CustomerMgmt = () => {
     }, []);
     
     const updateFilteredContents = useCallback(() => {
-        let filtered = usersData.slice()
-
+        let filtered = usersData.slice();
+    
         if (selectedTab === 'Credited') {
-            filtered = filtered.filter((content) => content.credit > 0);
+            filtered = filtered.filter((content) => content.creditBalance > 0);
         }
-
+    
         filtered = filtered.filter((content) =>
-            content.name.toLowerCase().includes(searchQuery.toLowerCase())
+            content.user_name && content.user_name.toLowerCase().includes(searchQuery.toLowerCase())
         );
+    
         filtered = sortContents(filtered, sortOrder);
-
+    
         setFilteredContents(filtered);
     }, [searchQuery, sortOrder, selectedTab, usersData]);
+    
 
     useEffect(() => {
         updateFilteredContents() // Update finalContents whenever the sortOrder changes

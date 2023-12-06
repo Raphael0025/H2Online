@@ -34,9 +34,9 @@ const getUserById = async (req, res) => {
 
 // create user
 const createUser = async (req, res) => {
-    const { user_name, address, gender, email, password, user_type, gallons} = req.body
+    const { first_name, last_name, address, gender, email, phone, password, user_type, gallons} = req.body
     try{
-        const user = await User.create({ user_name, address, gender, email, password, user_type, gallons})
+        const user = await User.create({ first_name, last_name, address, gender, email, phone, password, user_type, gallons})
         res.status(200).json(user)
     }catch(error){
         res.status(400).json({error: error.message})

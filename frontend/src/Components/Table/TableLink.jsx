@@ -16,14 +16,14 @@ const TableBody = ({dataContents, height}) => {
     return(
         <div className='d-flex flex-column w-100 gap-2 table-container-two' role='rowgroup' style={{height: height}}>
         {dataContents.map((data) => (
-            <Link to={`/customer-profile/${data.id}`} state={{ customerData: data }} key={data.id} className='table-row unstyled rounded-3'>
+            <Link to={`/customer-profile/${data._id}`} state={{ customerData: data }} key={data._id} className='table-row unstyled rounded-3'>
                 <div role='row' className={`table-row d-flex text-center py-2 rounded-3 ${selectedRow === data ? 'selected' : ''}`} onClick={() => setSelectedRow(data)} >
-                    <span className='w-100 text-truncate' style={{fontSize: '12px'}} role='cell' > {data.id} </span>
+                    <span className='w-100 text-truncate' style={{fontSize: '12px'}} role='cell' > {data._id} </span>
 
-                    <span className='w-100 text-truncate' style={{fontSize: '12px'}} role='cell' > {data.name} </span>
+                    <span className='w-100 text-truncate' style={{fontSize: '12px'}} role='cell' > {data.user_name} </span>
                     <span className='w-100 text-truncate' style={{fontSize: '12px'}} role='cell' > {data.phone} </span>
                     <span className='w-100 text-truncate' style={{fontSize: '12px'}} role='cell' > {data.address} </span>
-                    <span className='w-100 text-truncate' style={{fontSize: '12px'}} role='cell' > {data.credit} </span>
+                    <span className='w-100 text-truncate' style={{fontSize: '12px'}} role='cell' > {data.creditBalance} </span>
                     <span className='w-100 text-truncate' style={{fontSize: '12px'}} role='cell' > {data.createdAt} </span>
                     <span className='w-100 text-truncate' style={{fontSize: '12px'}} role='cell' > {data.coins} </span>
                 </div>

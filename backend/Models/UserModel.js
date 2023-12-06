@@ -20,7 +20,12 @@ const gallonsOwned = new Schema({
 
 
 const UserSchema = new Schema({
-    user_name: {
+    first_name: {
+        type: String,
+        required: true,
+        unique: true
+    },
+    last_name: {
         type: String,
         required: true,
         unique: true
@@ -33,7 +38,7 @@ const UserSchema = new Schema({
         type: String,
         required: true,
     },
-    phon: {
+    phone: {
         type: String,
         required: true
     },
@@ -49,6 +54,14 @@ const UserSchema = new Schema({
         type: String,
         default: 'customer',
         required: true
+    },
+    coins: {
+        type: Number,
+        default: 0
+    },
+    creditBalance: {
+        type: Number,
+        default: 0
     },
     gallons: [gallonsOwned]
 }, { timestamps: true })
