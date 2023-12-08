@@ -26,7 +26,7 @@ app.use('/api/products', products)
 app.use('/api/orders', order)
 app.use('/api/expense', expense)
 app.use('/api/booking', booking)
-app.use('/api/meter', meter)
+app.use('/api/meters', meter)
 
 app.get('/', (req, res) => {
     res.json({mssg: 'Welcome to H2Online!',})
