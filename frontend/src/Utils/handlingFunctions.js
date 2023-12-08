@@ -1,9 +1,11 @@
-export const filterData = (sampleData, searchQuery) => {
-    const filteredContents = sampleData.filter(content =>
-        content.date.toLowerCase().includes(searchQuery.toLowerCase())
-    );
-    return filteredContents;
-}
+export const filterData = (data, query) => {
+    return data.filter((item) => {
+      // Assuming item.date is the property you're filtering on
+      const lowerCaseDate = item.date ? item.date.toLowerCase() : '';
+  
+      return lowerCaseDate.includes(query.toLowerCase());
+    });
+  };
 
 export const sortContents = (contents, order) => {
     const sortedContents = [...contents];

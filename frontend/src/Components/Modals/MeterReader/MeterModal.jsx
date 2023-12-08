@@ -3,39 +3,21 @@
     import { css } from '@emotion/react';
     import { RingLoader } from 'react-spinners';
 
-    const MeterModal = () => {
+    const MeterModal = ({onAddOrUpdate}) => {
         const [day_read, setDay_read] = useState('');
         const [loading, setLoading] = useState(false);
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-
-        try {
-        setLoading(true); 
-        // Replace 'your-api-endpoint' with the actual API endpoint
-        const response = await fetch('http://localhost:4000/api/meter', {
-            method: 'POST',
-            headers: {
-            'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ day_read }),
-        });
-
-        const data = await response.json();
-
-        if (response.ok) {
-            console.log('Data sent successfully:', data);
-            alert('Data Sent')
-            // Optionally, you can close the modal or perform any other actions
-        } else {
-            console.error('Error sending data:', data);
-        }
-        } catch (error) {
-        console.error('Error:', error);
-        }  finally {
-            setLoading(false); // Set loading to false when the API request is completed
-        }
-    };
+        const handleSubmit = (e) => {
+            e.preventDefault();
+        
+            // Formulate the data to be added
+            const newData = {
+              day_read: day_read,
+            };
+        
+            // Call the function passed through props to handle addition/update
+            onAddOrUpdate(newData);
+          };
 
     // Define the CSS for the loading spinner
     const override = css`

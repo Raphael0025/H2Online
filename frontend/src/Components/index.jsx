@@ -41,7 +41,7 @@ import CashPaymentModal from './Modals/POS/CashPaymentModal'
 import CreditModal from './Modals/POS/CreditModal'
 import PayLaterModal from './Modals/POS/PayLaterModal'
 import ScheduleModal from './Modals/POS/ScheduleModal'
-
+import NightMeter from './Modals/MeterReader/NightMeter'
 import './components.css'
 
-export { Navigation, Receipt, SubDetails, POSItem, OverviewComponent, MultiSelectionTable, OverviewComponent2, AccordionTable2, TableLink, BookingItem, DoughnutChart, LineChart, AccordionTable, Table, NewCustomerModal, EditProfileModal, ReduceCreditModal, DeliveryPromptModal, UpdateProgressModal, NewItemModal, ReStockModal, ViewItemModal, MeterModal, OrderDetailsModal, PayBalanceModal, PromptModal, ReceiptModal, WarningModal, BookingModal, PromptBookingModal, IncomeModal, NewExpenseModal, ViewExpenseModal, CancelModal, CashPaymentModal, CreditModal, PayLaterModal, ScheduleModal } 
+export { Navigation, Receipt, SubDetails, NightMeter, POSItem, OverviewComponent, MultiSelectionTable, OverviewComponent2, AccordionTable2, TableLink, BookingItem, DoughnutChart, LineChart, AccordionTable, Table, NewCustomerModal, EditProfileModal, ReduceCreditModal, DeliveryPromptModal, UpdateProgressModal, NewItemModal, ReStockModal, ViewItemModal, MeterModal, OrderDetailsModal, PayBalanceModal, PromptModal, ReceiptModal, WarningModal, BookingModal, PromptBookingModal, IncomeModal, NewExpenseModal, ViewExpenseModal, CancelModal, CashPaymentModal, CreditModal, PayLaterModal, ScheduleModal } 
