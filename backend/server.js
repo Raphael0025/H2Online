@@ -10,6 +10,7 @@ const products = require('./Routes/products')
 const order = require('./Routes/orders')
 const expense = require('./Routes/expense')
 const booking = require('./Routes/booking')
+const meter = require('./Routes/meter')
 
 // express app
 const app = express()
@@ -25,6 +26,7 @@ app.use('/api/products', products)
 app.use('/api/orders', order)
 app.use('/api/expense', expense)
 app.use('/api/booking', booking)
+app.use('/api/meter', meter)
 
 app.get('/', (req, res) => {
     res.json({mssg: 'Welcome to H2Online!',})

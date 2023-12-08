@@ -70,8 +70,6 @@ const PaymentSchema = new Schema({
         type: Number,
         default: 0,
     },
-    method: String,
-    courier: String 
 })
 
 const OrderSchema = new Schema({
