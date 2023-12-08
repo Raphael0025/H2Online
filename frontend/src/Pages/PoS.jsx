@@ -62,24 +62,6 @@ const PoS = () => {
                         <div className='d-flex gap-3'>
                             <button className={`rounded-3 py-2 px-3 flex-fill ${shipping === 'On-Site' ? 'button-itm' : 'button-itm-outline'}`} onClick={() => setShipping('On-Site')}>On-Site</button>
                             <button className={`rounded-3 py-2 px-3 flex-fill ${shipping === 'Delivery' ? 'button-itm' : 'button-itm-outline'}`} onClick={() => setShipping('Delivery')}>Delivery</button>
-                            <button className={`rounded-3 py-2 px-3 flex-fill ${shipping === 'Schedule Delivery' ? 'button-itm' : 'button-itm-outline'}`} data-bs-target='#schedMod' data-bs-toggle='modal' onClick={() => setShipping('Schedule Delivery')}>Schedule Delivery</button>
-                        </div>
-                    </div>
-                    <div className='py-2'>
-                        <h6 className='header-txt'>Payment Methods</h6>
-                        <div className='d-flex gap-3'>
-                            <button className={`rounded-3 py-2 px-3 flex-fill ${paymentMethod === 'Cash' ? 'button-itm' : 'button-itm-outline'}`} onClick={() => setPaymentMethods('Cash')} >Cash</button>
-                            <button className={`rounded-3 py-2 px-3 flex-fill ${paymentMethod === 'GCash' ? 'button-itm' : 'button-itm-outline'}`} onClick={() => setPaymentMethods('GCash')} >GCash</button>
-                        </div>
-                    </div>
-                    <div className='p-2 rounded-2 d-flex flex-column gap-3' style={{backgroundColor: '#9EDBFF50'}}>
-                        <div className='d-flex justify-content-between align-items-center'>
-                            <h6 className='header-txt m-0'>Discount (%)</h6>
-                            <input type='number' min={0} className='rounded-3 text-center bg-light' style={{width: '60px'}} value={discount} onChange={(e) => handleDiscountChange(e, setDiscount)} />
-                        </div>
-                        <div className='d-flex justify-content-between align-items-center'>
-                            <h6 className='header-txt m-0'>Sub Total</h6>
-                            <span><b>P {calculateTotalSubPrice(selectedItems)}</b></span>
                         </div>
                     </div>
                     <div className='pt-2 d-flex justify-content-between align-items-center'>

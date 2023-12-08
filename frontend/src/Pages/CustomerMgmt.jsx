@@ -14,7 +14,7 @@ const CustomerMgmt = () => {
         }
     ]
     const content = [500, 50]
-    const headers = ['ID', 'Customer Name', 'Contact', 'Address', 'Total Credit', 'Account Creation', 'Agua Coins']
+    const headers = ['Customer Name', 'Contact', 'Address', 'Total Credit', 'Account Creation', 'Agua Coins']
 
     const [searchQuery, setSearchQuery] = useState('');
     const [sortOrder, setSortOrder] = useState('Latest'); // Default sort order

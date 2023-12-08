@@ -49,7 +49,7 @@ const Inventory = () => {
                 </header>
                 <section className='py-3 d-flex gap-3 flex-wrap'>
                 {filteredItems.map((sampleData, indx) => (
-                    <div key={indx} data-bs-target='#viewItem' data-bs-toggle="modal" onClick={() => handleSelectItem(sampleData)} className={`p-3 bg-light rounded-3 border-start border-5 ${decide(sampleData.stock, sampleData.max)}`} style={{width: '230px'}} >
+                    <div key={indx} data-bs-target='#viewItem' data-bs-toggle="modal" onClick={() => handleSelectItem(sampleData)} className={`p-3 bg-light rounded-3 border-start border-5 ${decide(sampleData.stock, sampleData.max)}`} style={{width: '230px', cursor: 'pointer'}} >
                         {/* <img src={imge} alt={imge} /> */}
                         <div className='mt-2 d-flex flex-column itm-card'>
                             <div className='d-flex justify-content-between'>
@@ -67,16 +67,6 @@ const Inventory = () => {
                             <div className='d-flex justify-content-between'>
                                 <span className='label'>Status</span>
                                 <span className='lbl-val'> Stock</span>
-                            </div>
-                            <div className='d-flex align-items-center justify-content-center gap-2 mt-2'>
-                                <div className='d-flex gap-2 justify-content-center align-items-center'>
-                                    <div className={`p-2 stat ${decide(sampleData.stock, sampleData.max)}`} />
-                                    <span className='label'>Re-Stock</span>
-                                </div>
-                                <div className='d-flex gap-2'>
-                                    <button type='button' data-bs-target='#reStock' data-bs-toggle="modal" className='button-itm-outline rounded-3 p-2 px-3'>All</button>
-                                    <button className='button-itm rounded-3 p-2 px-3' data-bs-target='#reStock' data-bs-toggle="modal">Partial</button>
-                                </div>
                             </div>
                         </div>
                     </div>

@@ -3,14 +3,7 @@ import { OverviewComponent, DoughnutChart, LineChart, AccordionTable } from 'Com
 import {orderHistory, doughnutData} from 'Utils/initialData'
 const Dashboard = () => {
     const overviewHeaders = [
-        {
-            header: 'Revenue',
-            icon: 'ri:bar-chart-grouped-line'
-        },
-        {
-            header: 'Profit',
-            icon: 'tdesign:money'
-        },
+        
         {
             header: 'Total Customers',
             icon: 'bi:people-fill'
@@ -18,14 +11,6 @@ const Dashboard = () => {
         {
             header: 'Expenses',
             icon: 'vaadin:money-withdraw'
-        },
-        {
-            header: 'Un Paid Customers',
-            icon: 'fluent:people-error-20-filled'
-        },
-        {
-            header: 'Daily Total Orders',
-            icon: 'solar:checklist-bold'
         },
         {
             header: 'For Pickup',
@@ -37,7 +22,7 @@ const Dashboard = () => {
         }
     ]
     const contents = [ 'P 4,020', 'P 3,200', 500, 'P 100', 50, 50, 13, 4]
-    const tableHeaders = ['Invoice ID', 'Date', 'Total', 'Items', 'Vendor', 'Payment', 'Delivery']
+    const tableHeaders = ['Date', 'Total', 'Items', 'Vendor', 'Payment', 'Delivery']
 
     return (
         <main id='dash' className='container-fluid '>

@@ -1,7 +1,35 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {IconPark} from 'Assets/SvgIcons'
 
 const MeterModal = () => {
+    const [day_read, setDay_read] = useState('');
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      // Replace 'your-api-endpoint' with the actual API endpoint
+      const response = await fetch('http://localhost:4000/api/meter', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ day_read }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        console.log('Data sent successfully:', data);
+        alert('Data Sent')
+        // Optionally, you can close the modal or perform any other actions
+      } else {
+        console.error('Error sending data:', data);
+      }
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  };
     return (
         <div className={`modal fade`} id="meterRead" data-bs-backdrop="static" data-bs-keyboard="false" tabIndex="-1" aria-labelledby="staticBackdropLabel" aria-hidden={true}>
             <div className="modal-dialog ">
@@ -11,10 +39,10 @@ const MeterModal = () => {
                         <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div className="modal-body">
-                        <form action='/point-of-sales' className='d-flex flex-column gap-2'>
-                            <div className='d-flex flex-column w-100'>
-                                <label htmlFor='meter' >Enter Water Meter</label>
-                                <input type='number' id='meter' className='p-2 bg-light rounded-3 w-100' placeholder='Enter Water Meter' required />
+                        <form onSubmit={handleSubmit} className='d-flex flex-column gap-2'>
+                            <div className='d-flex flex-column '>
+                                <label htmlFor='day_read' className='w-50' >Enter Water Meter</label>
+                                <input type='text' id='day_read' onChange={(e) => setDay_read(e.target.value)} className='p-2 bg-light rounded-3 w-100' placeholder='Enter Water Meter' required />
                             </div>
                             <div className='py-2 px-0 d-flex modal-footer justify-content-between'>
                                 <button type='button' data-bs-dismiss="modal" className='button-itm-outline-dngr d-flex align-items-center gap-2 py-2 px-3 rounded-3 text-uppercase'>Cancel <IconPark path={'basil:cancel-outline'} size={18} /></button>

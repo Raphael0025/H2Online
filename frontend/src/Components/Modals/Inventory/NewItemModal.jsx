@@ -24,7 +24,7 @@ const NewItemModal = () => {
             ...prevData,
             category: category,
         }));
-    }
+    } 
 
     const handleCancel = () => {
         // Clear the form data
